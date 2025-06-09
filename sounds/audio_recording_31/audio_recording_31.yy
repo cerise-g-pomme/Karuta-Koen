@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"audio_recording_31",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":0,
+  "conversionMode":0,
+  "duration":13.060091,
+  "name":"audio_recording_31",
+  "parent":{
+    "name":"Recordings",
+    "path":"folders/Recordings.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"audio_recording_31.wav",
+  "type":0,
+  "volume":1.0,
+}
