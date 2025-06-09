@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":4,
   "parent":{
-    "name":"Karuta Koen",
-    "path":"Karuta Koen.yyp",
+    "name":"Buttons",
+    "path":"folders/Buttons.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
