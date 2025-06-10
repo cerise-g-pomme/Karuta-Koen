@@ -7,7 +7,6 @@ data_define();
 
 texturegroup_load("default");
 
-
 randomize();
 choose_poem=irandom_range(1,100);
 choose_queue=false;
@@ -22,7 +21,11 @@ settings_poem=true;
 settings_red=true;
 settings_syllable=true;
 settings_beginner=true;
+settings_romaji=true;
 
-flip_state=0;
-flip_tween=0;
-poem_pull=true;
+flip_state=true;
+flip_tween=true;
+drop_value=0;
+drop_x=0;
+
+//gml_pragma("Texgroup.Scale", "texgroup", "2");

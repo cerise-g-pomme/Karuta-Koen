@@ -19,7 +19,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.13.1.193",
+    "IDEVersion":"2024.13.0.190",
   },
   "name":"Karuta Koen",
   "resources":[
@@ -29,6 +29,7 @@
     {"id":{"name":"room_main","path":"rooms/room_main/room_main.yy",},},
     {"id":{"name":"data_poems","path":"scripts/data_poems/data_poems.yy",},},
     {"id":{"name":"script_interface","path":"scripts/script_interface/script_interface.yy",},},
+    {"id":{"name":"script_karuta_ui","path":"scripts/script_karuta_ui/script_karuta_ui.yy",},},
     {"id":{"name":"script_karuta","path":"scripts/script_karuta/script_karuta.yy",},},
     {"id":{"name":"script_math","path":"scripts/script_math/script_math.yy",},},
     {"id":{"name":"script_strings","path":"scripts/script_strings/script_strings.yy",},},
@@ -143,6 +144,7 @@
     {"id":{"name":"sprite_button_outline","path":"sprites/sprite_button_outline/sprite_button_outline.yy",},},
     {"id":{"name":"sprite_button_poem","path":"sprites/sprite_button_poem/sprite_button_poem.yy",},},
     {"id":{"name":"sprite_button_red","path":"sprites/sprite_button_red/sprite_button_red.yy",},},
+    {"id":{"name":"sprite_button_romaji","path":"sprites/sprite_button_romaji/sprite_button_romaji.yy",},},
     {"id":{"name":"sprite_button_rotate","path":"sprites/sprite_button_rotate/sprite_button_rotate.yy",},},
     {"id":{"name":"sprite_button_sound","path":"sprites/sprite_button_sound/sprite_button_sound.yy",},},
     {"id":{"name":"sprite_button_syllable","path":"sprites/sprite_button_syllable/sprite_button_syllable.yy",},},
@@ -163,5 +165,6 @@
   "templateType":"game",
   "TextureGroups":[
     {"$GMTextureGroup":"","%Name":"Default","autocrop":true,"border":2,"compressFormat":"bz2","customOptions":"","directory":"","groupParent":null,"isScaled":true,"loadType":"default","mipsToGenerate":0,"name":"Default","resourceType":"GMTextureGroup","resourceVersion":"2.0","targets":-1,},
+    {"$GMTextureGroup":"","%Name":"texgroup","autocrop":true,"border":2,"compressFormat":"bz2","customOptions":"","directory":"","groupParent":null,"isScaled":true,"loadType":"default","mipsToGenerate":0,"name":"texgroup","resourceType":"GMTextureGroup","resourceVersion":"2.0","targets":-1,},
   ],
 }

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"script_karuta_ui",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"script_karuta_ui",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
