@@ -1,15 +1,19 @@
 function karuta_draw(x,y,scale){
 	//Get poem data
-	var poem_name="poem_"+string(choose_poem);
-	var poem_data=struct_get(poem_struct,poem_name);
-	var poem_red_string=poem_data.second_verse_answer;
-	var poem_red_count=string_length(poem_red_string)*settings_red;
-	var poem_kimaraji=poem_data.kimariji;
-	var poem_kimaraji_count=string_length(poem_kimaraji);
-	var torifuda=poem_data.part2;
+	if (poem_pull){poem_pull=false;
+		poem_name="poem_"+string(choose_poem);
+		poem_data=struct_get(poem_struct,poem_name);
+		poem_red_string=poem_data.second_verse_answer;
+		poem_red_count=string_length(poem_red_string);
+		poem_kimaraji=poem_data.kimariji;
+		poem_kimaraji_count=string_length(poem_kimaraji);
+		poem_kimaraji_romanji=hiragana_to_romaji(poem_kimaraji);
+		torifuda=poem_data.part2;
+	}
 	
 	//Get poem name and index
-	if(settings_dakuten)torifuda=remove_dakuten(torifuda);
+	var new_torifuda=torifuda;
+	if(settings_dakuten)new_torifuda=remove_dakuten(torifuda);
 
 	//Card flip and draw
 	var flip=1-flip_tween*2;
@@ -61,16 +65,17 @@ function karuta_draw(x,y,scale){
 	draw_set_color(c_black);
 	draw_set_alpha(1);
 	var count=poem_red_count;
-	if (count)draw_set_color(c_red);
+	if (count&&settings_red)draw_set_color(c_red);
 	var x0=x-155*scale*flip;
 	var y0=y-310*scale;
 	var y_step=150*scale;
 	var x_step=-155*scale*flip;
 	var clip="";
 	if(flipped){
+		var torifuda_string=new_torifuda;
 		for(var i=3;i>0;--i){
-			clip=string_copy(torifuda,1,5);
-			torifuda=string_copy(torifuda,6,string_length(torifuda)-5);
+			clip=string_copy(torifuda_string,1,5);
+			torifuda_string=string_copy(torifuda_string,6,string_length(torifuda_string)-5);
 			for(var j=0;j<5;++j){
 				draw_text_transformed(x0+i*x_step-x_step*3,y0+j*y_step,string_char_at(clip,j+1),-scale*flip,scale,0);
 				count--;
@@ -110,11 +115,14 @@ function karuta_draw(x,y,scale){
 	var left_drop=0;
 	if (settings_syllable){
 		draw_set_color(c_black);
-		left_drop=150*scale;
+		left_drop=250*scale;
 		var kima_scale=scale*0.8;
 		draw_sprite_ext(sprite_kimaraji,0,x-490*scale,y-370*scale,kima_scale,kima_scale,0,c_white,1);
 		var hiri_scale=min(400/string_width(poem_kimaraji),1);
 		draw_text_transformed(x-490*scale,y-370*scale,poem_kimaraji,kima_scale*hiri_scale,kima_scale*hiri_scale,0);
+		draw_set_color(c_white);
+		var hiri_scale=min(500/string_width(poem_kimaraji_romanji),1)*0.8;
+		draw_text_transformed(x-490*scale,y-260*scale,poem_kimaraji_romanji,kima_scale*hiri_scale,kima_scale*hiri_scale,0);
 	}
 	
 	//Draw buttons
@@ -133,6 +141,7 @@ function karuta_draw(x,y,scale){
 		audio_stop_all();
 		flip_state=false;
 		choose_queue=true;
+		poem_pull=true;
 		mouse_clear(mb_left);
 	}
 
@@ -160,5 +169,15 @@ function karuta_draw(x,y,scale){
 		audio_queue=true;
 	}
 	flip_tween=flip_tween*0.8+flip_state*0.2;
+	
+	//Draw SRS buttons
+	draw_set_color(c_black)
+	var srs_offset_x=197*scale;
+	var srs_y=y+480*scale;
+	var srs_scale=scale*0.5;
+	var font_scale=srs_scale*0.45;
+	if(ui_button_sprite_draw(x-srs_offset_x,srs_y,sprite_srs,srs_scale)){settings_syllable=!settings_syllable;mouse_clear(mb_left);}draw_text_transformed(x-srs_offset_x,srs_y,"Hard",font_scale,font_scale,0);by+=step;
+	if(ui_button_sprite_draw(x,srs_y,sprite_srs,srs_scale)){settings_syllable=!settings_syllable;mouse_clear(mb_left);}draw_text_transformed(x,srs_y,"Good",font_scale,font_scale,0);by+=step;
+	if(ui_button_sprite_draw(x+srs_offset_x,srs_y,sprite_srs,srs_scale)){settings_syllable=!settings_syllable;mouse_clear(mb_left);}draw_text_transformed(x+srs_offset_x,srs_y,"Easy",font_scale,font_scale,0);by+=step;
 	
 }

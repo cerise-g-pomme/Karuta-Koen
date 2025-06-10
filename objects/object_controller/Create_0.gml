@@ -6,7 +6,7 @@ gpu_set_tex_mip_enable(true);
 data_define();
 
 texturegroup_load("default");
-//texturegroup_set_mode(true,false,sprite_blank);
+
 
 randomize();
 choose_poem=irandom_range(1,100);
@@ -25,3 +25,4 @@ settings_beginner=true;
 
 flip_state=0;
 flip_tween=0;
+poem_pull=true;

@@ -19,7 +19,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.13.0.190",
+    "IDEVersion":"2024.13.1.193",
   },
   "name":"Karuta Koen",
   "resources":[
@@ -32,6 +32,7 @@
     {"id":{"name":"script_karuta","path":"scripts/script_karuta/script_karuta.yy",},},
     {"id":{"name":"script_math","path":"scripts/script_math/script_math.yy",},},
     {"id":{"name":"script_strings","path":"scripts/script_strings/script_strings.yy",},},
+    {"id":{"name":"utility","path":"scripts/utility/utility.yy",},},
     {"id":{"name":"audio_recording_1","path":"sounds/audio_recording_1/audio_recording_1.yy",},},
     {"id":{"name":"audio_recording_10","path":"sounds/audio_recording_10/audio_recording_10.yy",},},
     {"id":{"name":"audio_recording_100","path":"sounds/audio_recording_100/audio_recording_100.yy",},},
@@ -152,6 +153,7 @@
     {"id":{"name":"sprite_mark","path":"sprites/sprite_mark/sprite_mark.yy",},},
     {"id":{"name":"sprite_speak_mute","path":"sprites/sprite_speak_mute/sprite_speak_mute.yy",},},
     {"id":{"name":"sprite_speak","path":"sprites/sprite_speak/sprite_speak.yy",},},
+    {"id":{"name":"sprite_srs","path":"sprites/sprite_srs/sprite_srs.yy",},},
   ],
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
