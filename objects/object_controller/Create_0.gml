@@ -26,6 +26,4 @@ settings_romaji=true;
 flip_state=true;
 flip_tween=true;
 drop_value=0;
-drop_x=0;
 
-//gml_pragma("Texgroup.Scale", "texgroup", "2");

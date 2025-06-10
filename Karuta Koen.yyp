@@ -156,6 +156,7 @@
     {"id":{"name":"sprite_speak_mute","path":"sprites/sprite_speak_mute/sprite_speak_mute.yy",},},
     {"id":{"name":"sprite_speak","path":"sprites/sprite_speak/sprite_speak.yy",},},
     {"id":{"name":"sprite_srs","path":"sprites/sprite_srs/sprite_srs.yy",},},
+    {"id":{"name":"sprite_tatami","path":"sprites/sprite_tatami/sprite_tatami.yy",},},
   ],
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
