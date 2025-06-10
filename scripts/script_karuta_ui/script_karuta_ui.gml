@@ -6,9 +6,10 @@ function karuta_ui(x,y,scale,index){
     var poem_kimaraji_romanji=hiragana_to_romaji(poem_kimaraji);
     var torifuda=poem_data.part2;
     //Draw full poem background
+	button_color=546816;
     draw_set_alpha(1);
     draw_set_font(font_hirigana);
-    draw_sprite_ext(sprite_back,0,x+400*scale,y,scale,scale,0,341504,settings_poem);//546816
+    draw_sprite_ext(sprite_back,0,x+400*scale,y,scale,scale,0,merge_color(c_white,c_black,0.9),settings_poem);//546816 341504
     //Draw poem text
     if (settings_poem){
 		draw_set_color(c_white);
@@ -36,70 +37,86 @@ function karuta_ui(x,y,scale,index){
     var left_drop=0;
     var kima_scale=scale*0.8;
     if (settings_syllable){
-        draw_set_color(c_black);
-        draw_sprite_ext(sprite_kimaraji,0,x-490*scale,y-370*scale,kima_scale,kima_scale,0,c_white,1);
+        draw_set_color(c_white);
+        draw_sprite_ext(sprite_kimaraji,0,x-490*scale,y-280*scale,kima_scale,kima_scale,0,merge_color(c_white,c_black,0.9),1);
         var hiri_scale=min(200 / string_width(poem_kimaraji),1)*2;
-        draw_text_transformed(x-490*scale,y-370*scale,poem_kimaraji,kima_scale*hiri_scale,kima_scale*hiri_scale,0);
+        draw_text_transformed(x-490*scale,y-280*scale,poem_kimaraji,kima_scale*hiri_scale,kima_scale*hiri_scale,0);
 		left_drop+=150*scale;
 	}
 	//Draw romaji kimaraji
     if (settings_romaji){
         draw_set_color(c_white);
-		draw_sprite_ext(sprite_kimaraji,0,x-490*scale,y-370*scale+left_drop,kima_scale,kima_scale,0,341504,1);
-        var romanji_scale=min(240 / string_width(poem_kimaraji_romanji),1)*1.5;
-        draw_text_transformed(x-490*scale,y-370*scale+left_drop,poem_kimaraji_romanji,kima_scale*romanji_scale,kima_scale*romanji_scale,0);
+		draw_sprite_ext(sprite_kimaraji,0,x-490*scale,y-280*scale+left_drop,kima_scale,kima_scale,0,merge_color(c_white,c_black,0.9),1);
+        var romanji_scale=min(260 / string_width(poem_kimaraji_romanji),1)*1.5;
+        draw_text_transformed(x-490*scale,y-280*scale+left_drop,poem_kimaraji_romanji,kima_scale*romanji_scale,kima_scale*romanji_scale,0);
 		left_drop+=150*scale;
 	}
-    //Draw audio button
-    var left_button_scale=scale*0.8;
-    var bx=x-450*left_button_scale;
-    var by=y-470*left_button_scale+left_drop;
-    var speak_sprite=audio_is_playing(poem_data.sound) ? sprite_speak : sprite_speak_mute;
-    draw_sprite_ext(speak_sprite,current_time*0.015,bx-120*left_button_scale,by,left_button_scale,left_button_scale*0.5,0,c_white,1);
-    if (ui_button_sprite_draw(bx,by,sprite_button_sound,left_button_scale)||audio_queue){
-        audio_queue=false;
-        audio_stop_all();
-        audio_play_sound(poem_data.sound,1,false);
-        mouse_clear(mb_left);
+	// Draw audio button
+	button_color=c_white;
+	var left_button_scale=scale*0.8;
+	var left_button_scale_half=left_button_scale*0.5;
+	var left_button_scale_08=scale*0.6;
+	var bx=x-430*left_button_scale;
+	var by=y-500*left_button_scale;
+	var is_playing = audio_is_playing(poem_data.sound);
+	var speak_sprite = is_playing ? sprite_speak : sprite_speak_mute;
+	// Use precalculated rotation angle
+	var rotation = current_time * 0.015;
+	// Draw the sprite
+	draw_sprite_ext(speak_sprite,rotation,bx-120*left_button_scale,by,left_button_scale,left_button_scale_half,0,c_white,1);
+	// Check for click
+	if (ui_button_sprite_draw(bx,by,sprite_button_sound,left_button_scale_08)||audio_queue) {
+	    audio_queue = false;
+	    audio_stop_all();
+	    audio_play_sound(poem_data.sound, 1, false);
+	    mouse_clear(mb_left);
 	}
     //Option buttons
+	button_color=546816;
     var right_button_scale=scale*0.6;
     bx=window_get_width()-100*right_button_scale;
     by=100*right_button_scale;
     var step=130*right_button_scale;
 	//Draw the buttons
-    if (ui_button_sprite_draw(bx,by,sprite_button_number,right_button_scale)){ settings_number=!settings_number; mouse_clear(mb_left);} by+=step;
-    if (ui_button_sprite_draw(bx,by,sprite_button_dakuten,right_button_scale)){ settings_dakuten=!settings_dakuten; mouse_clear(mb_left);} by+=step;
-    if (ui_button_sprite_draw(bx,by,sprite_button_handwrite,right_button_scale)){ settings_handwrite=!settings_handwrite; mouse_clear(mb_left);} by+=step;
-    if (ui_button_sprite_draw(bx,by,sprite_button_rotate,right_button_scale)){ settings_flip=!settings_flip; mouse_clear(mb_left);} by+=step;
-    if (ui_button_sprite_draw(bx,by,sprite_button_red,right_button_scale)){ settings_red=!settings_red; mouse_clear(mb_left);} by+=step;
-    if (ui_button_sprite_draw(bx,by,sprite_button_outline,right_button_scale)){ settings_mark=!settings_mark; mouse_clear(mb_left);} by+=step;
-    if (ui_button_sprite_draw(bx,by,sprite_button_kimariji,right_button_scale)){ settings_beginner=!settings_beginner; mouse_clear(mb_left);} by+=step;
-    if (ui_button_sprite_draw(bx,by,sprite_button_poem,right_button_scale)){ settings_poem=!settings_poem; mouse_clear(mb_left);} by+=step;
-    if (ui_button_sprite_draw(bx,by,sprite_button_syllable,right_button_scale)){ settings_syllable=!settings_syllable; mouse_clear(mb_left);} by+=step;
-    if (ui_button_sprite_draw(bx,by,sprite_button_romaji,right_button_scale)){ settings_romaji=!settings_romaji; mouse_clear(mb_left);} by+=step;
+    if (ui_button_sprite_draw(bx,by,sprite_button_number,right_button_scale)){ settings_number=!settings_number;mouse_clear(mb_left);save_settings();} by+=step;
+    if (ui_button_sprite_draw(bx,by,sprite_button_dakuten,right_button_scale)){ settings_dakuten=!settings_dakuten;mouse_clear(mb_left);save_settings();} by+=step;
+    if (ui_button_sprite_draw(bx,by,sprite_button_handwrite,right_button_scale)){ settings_handwrite=!settings_handwrite;mouse_clear(mb_left);save_settings();} by+=step;
+    if (ui_button_sprite_draw(bx,by,sprite_button_rotate,right_button_scale)){ settings_flip=!settings_flip;mouse_clear(mb_left);save_settings();} by+=step;
+    if (ui_button_sprite_draw(bx,by,sprite_button_red,right_button_scale)){ settings_red=!settings_red;mouse_clear(mb_left);save_settings();} by+=step;
+    if (ui_button_sprite_draw(bx,by,sprite_button_outline,right_button_scale)){ settings_mark=!settings_mark;mouse_clear(mb_left);save_settings();} by+=step;
+    if (ui_button_sprite_draw(bx,by,sprite_button_kimariji,right_button_scale)){ settings_beginner=!settings_beginner;mouse_clear(mb_left);save_settings();} by+=step;
+    if (ui_button_sprite_draw(bx,by,sprite_button_poem,right_button_scale)){ settings_poem=!settings_poem;mouse_clear(mb_left);save_settings();} by+=step;
+    if (ui_button_sprite_draw(bx,by,sprite_button_syllable,right_button_scale)){ settings_syllable=!settings_syllable;mouse_clear(mb_left);save_settings();} by+=step;
+    if (ui_button_sprite_draw(bx,by,sprite_button_romaji,right_button_scale)){ settings_romaji=!settings_romaji;mouse_clear(mb_left);save_settings();} by+=step;
     //SRS buttons
+	button_color=c_white;
     draw_set_color(c_black);
-    var srs_offset_x=197*scale;
+    var srs_offset_x=145*scale;
     var srs_y=y+480*scale;
     var srs_scale=scale*0.5;
-    var font_scale=srs_scale*0.9;
+    var font_scale=srs_scale;
+	var age_scale=srs_scale*0.7;
     var proceed=false;
-    var srs_labels=["Hard","Good","Easy"];
-    for (var i=-1; i <= 1;++i){
-        var sx=x+i*srs_offset_x;
-        if (ui_button_sprite_draw(sx,srs_y,sprite_srs,srs_scale)){
+    var srs_labels=["Again","Hard","Good","Easy"];
+	var age_labels=["Soon","1 Day(s)","7 Day(s)",""];
+    for (var i=0;i<=3;++i){
+        var sx=x+(i-1.5)*srs_offset_x;
+        if (ui_button_sprite_index_draw(sx,srs_y,sprite_srs,srs_scale,i+1)){
+			srs_review_card(srs_load_card(index),i);
             proceed=true;
             mouse_clear(mb_left);
 		}
-        draw_text_transformed(sx,srs_y,srs_labels[i+1],font_scale,font_scale,0);
+        draw_text_transformed(sx,srs_y,srs_labels[i],font_scale,font_scale,0);
+		draw_text_transformed(sx-52*scale,srs_y-12*scale,string(i+1)+".",font_scale*0.5,font_scale*0.5,0);
 	}
     if (proceed){
         audio_stop_all();
         choose_old=choose_poem;
-        choose_poem=irandom_range(1,100);
         mouse_clear(mb_left);
         drop_value=1;
+		//Find the new card
+		var next_card=srs_get_next_card();
+		choose_poem=next_card.cardID;
 	}
 }
 
