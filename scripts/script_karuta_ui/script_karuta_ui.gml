@@ -96,11 +96,10 @@ function karuta_ui(x,y,scale,index){
     var srs_scale=scale*0.5;
     var font_scale=srs_scale;
     var proceed=false;
-    var srs_labels=["Forgot","Bad","Okay","Good","Great"];
-    for (var i=0;i<=4;++i){
-        var sx=x+(i-2)*srs_offset_x;
+    var srs_labels=["Bad","Okay","Good","Great"];
+    for (var i=0;i<=3;++i){
+        var sx=x+(i-1.5)*srs_offset_x;
         if (ui_button_sprite_index_draw(sx,srs_y,sprite_srs,srs_scale,i+1)){
-			srs_review_card(srs_load_card(index),i);
             proceed=true;
             mouse_clear(mb_left);
 		}
@@ -112,9 +111,7 @@ function karuta_ui(x,y,scale,index){
         choose_old=choose_poem;
         mouse_clear(mb_left);
         drop_value=1;
-		//Find the new card
-		var next_card=srs_get_next_card();
-		choose_poem=next_card.cardID;
+		choose_poem=irandom_range(1,100)
 	}
 }
 

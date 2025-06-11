@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"data_poems",
   "parent":{
-    "name":"Karuta Koen",
-    "path":"Karuta Koen.yyp",
+    "name":"Data",
+    "path":"folders/Data.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

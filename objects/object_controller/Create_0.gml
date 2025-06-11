@@ -7,7 +7,7 @@ data_define();
 texturegroup_load("default");
 randomize();
 
-choose_poem=-1;
+choose_poem=1;
 choose_queue=false;
 audio_queue=false;
 
@@ -29,5 +29,4 @@ flip_tween=true;
 drop_value=0;
 
 button_color=c_white;
-
-srs_initialize();
+srs_create();
