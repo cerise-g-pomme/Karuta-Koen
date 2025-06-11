@@ -1,4 +1,4 @@
-draw_sprite_tiled_ext(sprite_tatami,0,0,0,1,1,c_white,0.04);
+draw_sprite_tiled_ext(sprite_tatami,0,0,0,1,1,c_white,0.02);
 
 var center_x=window_get_width()*0.5;
 var center_y=window_get_height()*0.46;

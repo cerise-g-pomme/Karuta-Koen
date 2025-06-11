@@ -239,10 +239,7 @@
   "sdfSpread":8,
   "size":45.0,
   "styleName":"regular",
-  "textureGroupId":{
-    "name":"Default",
-    "path":"texturegroups/Default",
-  },
+  "textureGroupId":null,
   "TTFName":"",
   "usesSDF":true,
 }
