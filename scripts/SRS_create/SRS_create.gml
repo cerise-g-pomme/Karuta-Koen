@@ -4,10 +4,11 @@ function srs_card_create(_id) {
     return {
         cardID: _id,
         unlocked: false,
-        easeFactor: 2.5,
-        interval: 1,  // in days
-        lastReviewed: 0,
-        dueDate: 0
+		repetitions: 0,
+		easeFactor: 2.5,
+		interval: 1,
+		lastReviewed: 0,
+		dueDate: 0
     };
 }
 function srs_initialize(){
@@ -65,7 +66,6 @@ function srs_get_next_card() {
 	    }
 	}
 	if (best_card==undefined){
-		show_message(ds_list_size(srs_cards))
 		ds_list_shuffle(srs_cards);
 		var index=0;
 		if (srs_cards[| index].cardID==choose_poem)index++;

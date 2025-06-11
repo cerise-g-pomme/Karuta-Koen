@@ -95,19 +95,17 @@ function karuta_ui(x,y,scale,index){
     var srs_y=y+480*scale;
     var srs_scale=scale*0.5;
     var font_scale=srs_scale;
-	var age_scale=srs_scale*0.7;
     var proceed=false;
-    var srs_labels=["Again","Hard","Good","Easy"];
-	var age_labels=["Soon","1 Day(s)","7 Day(s)",""];
-    for (var i=0;i<=3;++i){
-        var sx=x+(i-1.5)*srs_offset_x;
+    var srs_labels=["Forgot","Bad","Okay","Good","Great"];
+    for (var i=0;i<=4;++i){
+        var sx=x+(i-2)*srs_offset_x;
         if (ui_button_sprite_index_draw(sx,srs_y,sprite_srs,srs_scale,i+1)){
 			srs_review_card(srs_load_card(index),i);
             proceed=true;
             mouse_clear(mb_left);
 		}
         draw_text_transformed(sx,srs_y,srs_labels[i],font_scale,font_scale,0);
-		draw_text_transformed(sx-52*scale,srs_y-12*scale,string(i+1)+".",font_scale*0.5,font_scale*0.5,0);
+		draw_text_transformed(sx-57*scale,srs_y-14*scale,string(i+1)+".",font_scale*0.5,font_scale*0.5,0);
 	}
     if (proceed){
         audio_stop_all();

@@ -3,10 +3,11 @@ function srs_save_card(_card) {
     ini_open("srs_data.sav");
     var section = "card_" + string(_card.cardID);
     ini_write_real(section, "unlocked", _card.unlocked);
+	ini_write_real(section, "repetitions", _card.repetitions);
     ini_write_real(section, "easeFactor", _card.easeFactor);
     ini_write_real(section, "interval", _card.interval);
     ini_write_real(section, "lastReviewed", _card.lastReviewed);
-    ini_write_real(section, "dueDate", _card.dueDate);
+    ini_write_real(section, "dueDate", _card.dueDate);	
     ini_close();
 }
 ///@function srs_load_card(_id, _ini_file)
@@ -16,6 +17,7 @@ function srs_load_card(_id) {
     var _card = srs_card_create(_id);
     if (ini_key_exists(section, "unlocked")) {
         _card.unlocked = ini_read_real(section, "unlocked", false);
+		_card.repetitions = ini_read_real(section, "repetitions", 0);
         _card.easeFactor = ini_read_real(section, "easeFactor", 2.5);
         _card.interval = ini_read_real(section, "interval", 1);
         _card.lastReviewed = ini_read_real(section, "lastReviewed", 0);

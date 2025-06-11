@@ -239,10 +239,7 @@
   "sdfSpread":8,
   "size":45.0,
   "styleName":"Medium",
-  "textureGroupId":{
-    "name":"texgroup",
-    "path":"texturegroups/texgroup",
-  },
+  "textureGroupId":null,
   "TTFName":"",
   "usesSDF":true,
 }
