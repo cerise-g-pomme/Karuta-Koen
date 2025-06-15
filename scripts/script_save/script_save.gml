@@ -1,3 +1,19 @@
+function init_settings(){
+	//Define settings
+	settings_dakuten=true;
+	settings_number=true;
+	settings_handwrite=true;
+	settings_flip=false;
+	settings_mark=true;
+	settings_poem=true;
+	settings_red=true;
+	settings_syllable=true;
+	settings_beginner=true;
+	settings_romaji=true;
+	settings_autoplay=true;
+	settings_language=0;
+	load_settings();
+}
 function save_settings(){
 	ini_open("settings.sav");
 	ini_write_real("setting","number",settings_number);
@@ -10,6 +26,8 @@ function save_settings(){
 	ini_write_real("setting","full_poem",settings_poem);
 	ini_write_real("setting","first_syllables",settings_syllable);
 	ini_write_real("setting","romanized_syllables",settings_romaji);
+	ini_write_real("setting","autoplay",settings_autoplay);
+	ini_write_real("setting","language",settings_language);
 	ini_close();
 }
 function load_settings(){
@@ -25,6 +43,8 @@ function load_settings(){
 	settings_poem=ini_read_real("setting","full_poem",0);
 	settings_syllable=ini_read_real("setting","first_syllables",0);
 	settings_romaji=ini_read_real("setting","romanized_syllables",0);
+	settings_autoplay=ini_read_real("setting","autoplay",0);
+	settings_language=ini_read_real("setting","language",0);
 	ini_close();
 	}
 }

@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"recording_016_b",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":0,
+  "conversionMode":0,
+  "duration":8.83034,
+  "name":"recording_016_b",
+  "parent":{
+    "name":"Recordings",
+    "path":"folders/Recordings.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"recording_016_b.ogg",
+  "type":0,
+  "volume":1.0,
+}

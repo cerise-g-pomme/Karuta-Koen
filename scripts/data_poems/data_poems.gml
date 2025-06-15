@@ -1,7 +1,8 @@
-function data_define(){
-	poem_struct={
-		poem_1:{
-			sound: audio_recording_1,
+//fix audio 20			
+function data_define(){			
+	poem_struct={		
+		poem_1:{	
+			sound1: recording_001_a, sound2: recording_001_b,
 			poem:"あきのたの　かりほのいほの　とまをあらみ　わがころもでは　つゆにぬれつつ",
 			name_e:"天智天皇",
 			part1:"あきのたのかりほのいほのとまをあらみ",
@@ -16,8 +17,8 @@ function data_define(){
 			mark_n: 5,
 			mark_x: 1,
 			mark_y: 3},
-		poem_2:{
-			sound: audio_recording_2,
+		poem_2:{	
+			sound1: recording_002_a, sound2: recording_002_b,
 			poem:"はるすぎて　なつきにけらし　しろたへの　ころもほすてふ　あまのかぐやま",
 			name_e:"持統天皇",
 			part1:"はるすぎてなつきにけらししろたへの",
@@ -32,8 +33,8 @@ function data_define(){
 			mark_n: 2,
 			mark_x: 1,
 			mark_y: 4},
-		poem_3:{
-			sound: audio_recording_3,
+		poem_3:{	
+			sound1: recording_003_a, sound2: recording_003_b,
 			poem:"あしびきの　やまどりのをの　しだりをの　ながながしよを　ひとりかもねむ",
 			name_e:"柿本人麻呂",
 			part1:"あしびきのやまどりのをのしだりをの",
@@ -48,8 +49,8 @@ function data_define(){
 			mark_n: 1,
 			mark_x: 2,
 			mark_y: 1},
-		poem_4:{
-			sound: audio_recording_4,
+		poem_4:{	
+			sound1: recording_004_a, sound2: recording_004_b,
 			poem:"たごのうらに　うちいでてみれば　しろたへの　ふじのたかねに　ゆきはふりつつ",
 			name_e:"山部赤人",
 			part1:"たごのうらにうちいでてみればしろたへの",
@@ -64,8 +65,8 @@ function data_define(){
 			mark_n: 1,
 			mark_x: 2,
 			mark_y: 1},
-		poem_5:{
-			sound: audio_recording_5,
+		poem_5:{	
+			sound1: recording_005_a, sound2: recording_005_b,
 			poem:"おくやまに　もみぢふみわけ　なくしかの　こゑきくときぞ　あきはかなしき",
 			name_e:"猿丸大夫",
 			part1:"おくやまにもみぢふみわけなくしかの",
@@ -80,8 +81,8 @@ function data_define(){
 			mark_n: 1,
 			mark_x: 2,
 			mark_y: 1},
-		poem_6:{
-			sound: audio_recording_6,
+		poem_6:{	
+			sound1: recording_006_a, sound2: recording_006_b,
 			poem:"かささぎの　わたせるはしに　おくしもの　しろきをみれば　よぞふけにける",
 			name_e:"中納言家持",
 			part1:"かささぎのわたせるはしにおくしもの",
@@ -96,8 +97,8 @@ function data_define(){
 			mark_n: 1,
 			mark_x: 2,
 			mark_y: 1},
-		poem_7:{//あまの
-			sound: audio_recording_7,
+		poem_7:{//あまの	
+			sound1: recording_007_a, sound2: recording_007_b,
 			poem:"あまのはら　ふりさけみれば　かすがなる　みかさのやまに　いでしつきかも",
 			name_e:"安倍仲麿",
 			part1:"あまのはらふりさけみればかすがなる",
@@ -112,8 +113,8 @@ function data_define(){
 			mark_n: 1,
 			mark_x: 2,
 			mark_y: 1},
-		poem_8:{
-			sound: audio_recording_8,
+		poem_8:{	
+			sound1: recording_008_a, sound2: recording_008_b,
 			poem:"わがいほは　みやこのたつみ　しかぞすむ　よをうぢやまと　ひとはいふなり",
 			name_e:"喜撰法師",
 			part1:"わがいほはみやこのたつみしかぞすむ",
@@ -128,8 +129,8 @@ function data_define(){
 			mark_n: 1,
 			mark_x: 2,
 			mark_y: 1},
-		poem_9:{
-			sound: audio_recording_9,
+		poem_9:{	
+			sound1: recording_009_a, sound2: recording_009_b,
 			poem:"はなのいろは　うつりにけりな　いたづらに　わがみよにふる　ながめせしまに",
 			name_e:"小野小町",
 			part1:"はなのいろはうつりにけりないたづらに",
@@ -144,8 +145,8 @@ function data_define(){
 			mark_n: 1,
 			mark_x: 2,
 			mark_y: 1},
-		poem_10:{
-			sound: audio_recording_10,
+		poem_10:{	
+			sound1: recording_010_a, sound2: recording_010_b,
 			poem:"これやこの　ゆくもかへるも　わかれては　しるもしらぬも　あふさかのせき",
 			name_e:"蝉丸",
 			part1:"これやこのゆくもかへるもわかれては",
@@ -160,8 +161,8 @@ function data_define(){
 			mark_n: 1,
 			mark_x: 2,
 			mark_y: 1},
-		poem_11:{
-			sound: audio_recording_11,
+		poem_11:{	
+			sound1: recording_011_a, sound2: recording_011_b,
 			poem:"わたのはら　やそしまかけて　こぎいでぬと　ひとにはつげよ　あまのつりぶね",
 			name_e:"参議篁",
 			part1:"わたのはらやそしまかけてこぎいでぬと",
@@ -176,8 +177,8 @@ function data_define(){
 			mark_n: 1,
 			mark_x: 2,
 			mark_y: 1},
-		poem_12:{//あまつ
-			sound: audio_recording_12,
+		poem_12:{//あまつ	
+			sound1: recording_012_a, sound2: recording_012_b,
 			poem:"あまつかぜ　くものかよひぢ　ふきとぢよ　をとめのすがた　しばしとどめむ",
 			name_e:"僧正遍照",
 			part1:"あまつかぜくものかよひぢふきとぢよ",
@@ -192,8 +193,8 @@ function data_define(){
 			mark_n: 0,
 			mark_x: 3,
 			mark_y: 1},
-		poem_13:{
-			sound: audio_recording_13,
+		poem_13:{	
+			sound1: recording_013_a, sound2: recording_013_b,
 			poem:"つくばねの　みねよりおつる　みなのがは　こひぞつもりて　ふちとなりぬる",
 			name_e:"陽成院",
 			part1:"つくばねのみねよりおつるみなのがは",
@@ -208,8 +209,8 @@ function data_define(){
 			mark_n: 1,
 			mark_x: 2,
 			mark_y: 1},
-		poem_14:{
-			sound: audio_recording_14,
+		poem_14:{	
+			sound1: recording_014_a, sound2: recording_014_b,
 			poem:"みちのくの　しのぶもぢずり　たれゆゑに　みだれそめにし　われならなくに",
 			name_e:"河原左大臣",
 			part1:"みちのくのしのぶもぢずりたれゆゑに",
@@ -224,8 +225,8 @@ function data_define(){
 			mark_n: 1,
 			mark_x: 2,
 			mark_y: 1},
-		poem_15:{
-			sound: audio_recording_15,
+		poem_15:{	
+			sound1: recording_015_a, sound2: recording_015_b,
 			poem:"きみがため　はるののにいでて　わかなつむ　わがころもでに　ゆきはふりつつ",
 			name_e:"光孝天皇",
 			part1:"きみがためはるののにいでてわかなつむ",
@@ -240,8 +241,8 @@ function data_define(){
 			mark_n: 2,
 			mark_x: 1,
 			mark_y: 1},
-		poem_16:{
-			sound: audio_recording_16,
+		poem_16:{	
+			sound1: recording_016_a, sound2: recording_016_b,
 			poem:"たちわかれ　いなばのやまの　みねにおふる　まつとしきかば　いまかへりこむ",
 			name_e:"中納言行平",
 			part1:"たちわかれいなばのやまのみねにおふる",
@@ -256,8 +257,8 @@ function data_define(){
 			mark_n: 1,
 			mark_x: 2,
 			mark_y: 1},
-		poem_17:{
-			sound: audio_recording_17,
+		poem_17:{	
+			sound1: recording_017_a, sound2: recording_017_b,
 			poem:"ちはやぶる　かみよもきかず　たつたがは　からくれなゐに　みづくくるとは",
 			name_e:"在原業平朝臣",
 			part1:"ちはやぶるかみよもきかずたつたがは",
@@ -272,8 +273,8 @@ function data_define(){
 			mark_n: 1,
 			mark_x: 2,
 			mark_y: 1},
-		poem_18:{
-			sound: audio_recording_18,
+		poem_18:{	
+			sound1: recording_018_a, sound2: recording_018_b,
 			poem:"すみのえの　きしによるなみ　よるさへや　ゆめのかよひぢ　ひとめよくらむ",
 			name_e:"藤原敏行朝臣",
 			part1:"すみのえのきしによるなみよるさへや",
@@ -288,8 +289,8 @@ function data_define(){
 			mark_n: 1,
 			mark_x: 2,
 			mark_y: 1},
-		poem_19:{
-			sound: audio_recording_19,
+		poem_19:{	
+			sound1: recording_019_a, sound2: recording_019_b,
 			poem:"なにはがた　みじかきあしの　ふしのまも　あはでこのよを　すぐしてよとや",
 			name_e:"伊勢",
 			part1:"なにはがたみじかきあしのふしのまも",
@@ -304,8 +305,8 @@ function data_define(){
 			mark_n: 1,
 			mark_x: 2,
 			mark_y: 1},
-		poem_20:{
-			sound: audio_recording_20,
+		poem_20:{	
+			sound1: recording_020_a, sound2: recording_020_b,
 			poem:"わびぬれば　いまはたおなじ　なにはなる　みをつくしても　あはむとぞおもふ",
 			name_e:"元良親王",
 			part1:"わびぬればいまはたおなじなにはなる",
@@ -319,8 +320,8 @@ function data_define(){
 			mark_n: 1,
 			mark_x: 2,
 			mark_y: 1},
-		poem_21:{
-			sound: audio_recording_21,
+		poem_21:{	
+			sound1: recording_021_a, sound2: recording_021_b,
 			poem:"いまこむと　いひしばかりに　ながつきの　ありあけのつきを　まちいでつるかな",
 			name_e:"素性法師",
 			part1:"いまこむといひしばかりにながつきの",
@@ -335,8 +336,8 @@ function data_define(){
 			mark_n: 1,
 			mark_x: 2,
 			mark_y: 1},
-		poem_22:{
-			sound: audio_recording_22,
+		poem_22:{	
+			sound1: recording_022_a, sound2: recording_022_b,
 			poem:"ふくからに　あきのくさきの　しをるれば　むべやまかぜを　あらしといふらむ",
 			name_e:"文屋康秀",
 			part1:"ふくからにあきのくさきのしをるれば",
@@ -351,8 +352,8 @@ function data_define(){
 			mark_n: 1,
 			mark_x: 2,
 			mark_y: 1},
-		poem_23:{
-			sound: audio_recording_23,
+		poem_23:{	
+			sound1: recording_023_a, sound2: recording_023_b,
 			poem:"つきみれば　ちぢにものこそ　かなしけれ　わがみひとつの　あきにはあらねど",
 			name_e:"大江千里",
 			part1:"つきみればちぢにものこそかなしけれ",
@@ -367,8 +368,8 @@ function data_define(){
 			mark_n: 1,
 			mark_x: 2,
 			mark_y: 1},
-		poem_24:{
-			sound: audio_recording_24,
+		poem_24:{	
+			sound1: recording_024_a, sound2: recording_024_b,
 			poem:"このたびは　ぬさもとりあへず　たむけやま　もみぢのにしき　かみのまにまに",
 			name_e:"菅家",
 			part1:"このたびはぬさもとりあへずたむけやま",
@@ -383,8 +384,8 @@ function data_define(){
 			mark_n: 1,
 			mark_x: 2,
 			mark_y: 1},
-		poem_25:{
-			sound: audio_recording_25,
+		poem_25:{	
+			sound1: recording_025_a, sound2: recording_025_b,
 			poem:"なにしおはば　あふさかやまの　さねかづら　ひとにしられで　くるよしもがな",
 			name_e:"三条右大臣",
 			part1:"なにしおはばあふさかやまのさねかづら",
@@ -399,8 +400,8 @@ function data_define(){
 			mark_n: 1,
 			mark_x: 2,
 			mark_y: 1},
-		poem_26:{
-			sound: audio_recording_26,
+		poem_26:{	
+			sound1: recording_026_a, sound2: recording_026_b,
 			poem:"をぐらやま　みねのもみぢば　こころあらば　いまひとたびの　みゆきまたなむ",
 			name_e:"貞信公",
 			part1:"をぐらやまみねのもみぢばこころあらば",
@@ -415,8 +416,8 @@ function data_define(){
 			mark_n: 2,
 			mark_x: 1,
 			mark_y: 1},
-		poem_27:{
-			sound: audio_recording_27,
+		poem_27:{	
+			sound1: recording_027_a, sound2: recording_027_b,
 			poem:"みかのはら　わきてながるる　いづみがは　いつみきとてか　こひしかるらむ",
 			name_e:"中納言兼輔",
 			part1:"みかのはらわきてながるるいづみがは",
@@ -431,8 +432,8 @@ function data_define(){
 			mark_n: 1,
 			mark_x: 2,
 			mark_y: 1},
-		poem_28:{
-			sound: audio_recording_28,
+		poem_28:{	
+			sound1: recording_028_a, sound2: recording_028_b,
 			poem:"やまざとは　ふゆぞさびしさ　まさりける　ひとめもくさも　かれぬとおもへば",
 			name_e:"源宗于朝臣",
 			part1:"やまざとはふゆぞさびしさまさりける",
@@ -447,8 +448,8 @@ function data_define(){
 			mark_n: 1,
 			mark_x: 2,
 			mark_y: 1},
-		poem_29:{
-			sound: audio_recording_29,
+		poem_29:{	
+			sound1: recording_029_a, sound2: recording_029_b,
 			poem:"こころあてに　をらばやをらむ　はつしもの　おきまどはせる　しらぎくのはな",
 			name_e:"凡河内躬恒",
 			part1:"こころあてにをらばやをらむはつしもの",
@@ -463,8 +464,8 @@ function data_define(){
 			mark_n: 0,
 			mark_x: 3,
 			mark_y: 1},
-		poem_30:{//ありあ
-			sound: audio_recording_30,
+		poem_30:{//ありあ	
+			sound1: recording_030_a, sound2: recording_030_b,
 			poem:"ありあけの　つれなくみえし　わかれより　あかつきばかり　うきものはなし",
 			name_e:"壬生忠岑",
 			part1:"ありあけのつれなくみえしわかれより",
@@ -479,8 +480,8 @@ function data_define(){
 			mark_n: 1,
 			mark_x: 2,
 			mark_y: 1},
-		poem_31:{
-			sound: audio_recording_31,
+		poem_31:{	
+			sound1: recording_031_a, sound2: recording_031_b,
 			poem:"あさぼらけ　ありあけのつきと　みるまでに　よしののさとに　ふれるしらゆき",
 			name_e:"坂上是則",
 			part1:"あさぼらけありあけのつきとみるまでに",
@@ -495,8 +496,8 @@ function data_define(){
 			mark_n: 1,
 			mark_x: 2,
 			mark_y: 1},
-		poem_32:{
-			sound: audio_recording_32,
+		poem_32:{	
+			sound1: recording_032_a, sound2: recording_032_b,
 			poem:"やまがはに　かぜのかけたる　しがらみは　ながれもあへぬ　もみぢなりけり",
 			name_e:"春道列樹",
 			part1:"やまがはにかぜのかけたるしがらみは",
@@ -511,8 +512,8 @@ function data_define(){
 			mark_n: 1,
 			mark_x: 2,
 			mark_y: 1},
-		poem_33:{
-			sound: audio_recording_33,
+		poem_33:{	
+			sound1: recording_033_a, sound2: recording_033_b,
 			poem:"ひさかたの　ひかりのどけき　はるのひに　しづごころなく　はなのちるらむ",
 			name_e:"紀友則",
 			part1:"ひさかたのひかりのどけきはるのひに",
@@ -527,8 +528,8 @@ function data_define(){
 			mark_n: 1,
 			mark_x: 2,
 			mark_y: 1},
-		poem_34:{
-			sound: audio_recording_34,
+		poem_34:{	
+			sound1: recording_034_a, sound2: recording_034_b,
 			poem:"たれをかも　しるひとにせむ　たかさごの　まつもむかしの　ともならなくに",
 			name_e:"藤原興風",
 			part1:"たれをかもしるひとにせむたかさごの",
@@ -544,8 +545,8 @@ function data_define(){
 			mark_n: 1,
 			mark_x: 2,
 			mark_y: 1},
-		poem_35:{
-			sound: audio_recording_35,
+		poem_35:{	
+			sound1: recording_035_a, sound2: recording_035_b,
 			poem:"ひとはいさ　こころもしらず　ふるさとは　はなぞむかしの　かににほひける",
 			name_e:"紀貫之",
 			part1:"ひとはいさこころもしらずふるさとは",
@@ -560,8 +561,8 @@ function data_define(){
 			mark_n: 1,
 			mark_x: 2,
 			mark_y: 1},
-		poem_36:{
-			sound: audio_recording_36,
+		poem_36:{	
+			sound1: recording_036_a, sound2: recording_036_b,
 			poem:"なつのよは　まだよひながら　あけぬるを　くものいづこに　つきやどるらむ",
 			name_e:"清原深養父",
 			part1:"なつのよはまだよひながらあけぬるを",
@@ -576,8 +577,8 @@ function data_define(){
 			mark_n: 1,
 			mark_x: 2,
 			mark_y: 1},
-		poem_37:{
-			sound: audio_recording_37,
+		poem_37:{	
+			sound1: recording_037_a, sound2: recording_037_b,
 			poem:"しらつゆに　かぜのふきしく　あきののは　つらぬきとめぬ　たまぞちりける",
 			name_e:"文屋朝康",
 			part1:"しらつゆにかぜのふきしくあきののは",
@@ -592,8 +593,8 @@ function data_define(){
 			mark_n: 0,
 			mark_x: 3,
 			mark_y: 1},
-		poem_38:{
-			sound: audio_recording_38,
+		poem_38:{	
+			sound1: recording_038_a, sound2: recording_038_b,
 			poem:"わすらるる　みをばおもはず　ちかひてし　ひとのいのちの　をしくもあるかな",
 			name_e:"右近",
 			part1:"わすらるるみをばおもはずちかひてし",
@@ -608,8 +609,8 @@ function data_define(){
 			mark_n: 1,
 			mark_x: 2,
 			mark_y: 1},
-		poem_39:{//あさじ
-			sound: audio_recording_39,
+		poem_39:{//あさじ	
+			sound1: recording_039_a, sound2: recording_039_b,
 			poem:"あさぢふの　をののしのはら　しのぶれど　あまりてなどか　ひとのこひしき",
 			name_e:"参議等",
 			part1:"あさぢふのをののしのはらしのぶれど",
@@ -624,8 +625,8 @@ function data_define(){
 			mark_n: 1,
 			mark_x: 2,
 			mark_y: 1},
-		poem_40:{
-			sound: audio_recording_40,
+		poem_40:{	
+			sound1: recording_040_a, sound2: recording_040_b,
 			poem:"しのぶれど　いろにいでにけり　わがこひは　ものやおもふと　ひとのとふまで",
 			name_e:"平兼盛",
 			part1:"しのぶれどいろにいでにけりわがこひは",
@@ -640,8 +641,8 @@ function data_define(){
 			mark_n: 1,
 			mark_x: 2,
 			mark_y: 1},
-		poem_41:{
-			sound: audio_recording_41,
+		poem_41:{	
+			sound1: recording_041_a, sound2: recording_041_b,
 			poem:"こひすてふ　わがなはまだき　たちにけり　ひとしれずこそ　おもひそめしか",
 			name_e:"壬生忠見",
 			part1:"こひすてふわがなはまだきたちにけり",
@@ -656,8 +657,8 @@ function data_define(){
 			mark_n: 1,
 			mark_x: 2,
 			mark_y: 1},
-		poem_42:{
-			sound: audio_recording_42,
+		poem_42:{	
+			sound1: recording_042_a, sound2: recording_042_b,
 			poem:"ちぎりきな　かたみにそでを　しぼりつつ　すゑのまつやま　なみこさじとは",
 			name_e:"清原元輔",
 			part1:"ちぎりきなかたみにそでをしぼりつつ",
@@ -672,8 +673,8 @@ function data_define(){
 			mark_n: 0,
 			mark_x: 3,
 			mark_y: 1},
-		poem_43:{//あい
-			sound: audio_recording_43,
+		poem_43:{//あい	
+			sound1: recording_043_a, sound2: recording_043_b,
 			poem:"あひみての　のちのこころに　くらぶれば　むかしはものを　おもはざりけり",
 			name_e:"権中納言敦忠",
 			part1:"あひみてののちのこころにくらぶれば",
@@ -688,8 +689,8 @@ function data_define(){
 			mark_n: 1,
 			mark_x: 2,
 			mark_y: 1},
-		poem_44:{
-			sound: audio_recording_44,
+		poem_44:{	
+			sound1: recording_044_a, sound2: recording_044_b,
 			poem:"あふことの　たえてしなくは　なかなかに　ひとをもみをも　うらみざらまし",
 			name_e:"中納言朝忠",
 			part1:"あふことのたえてしなくはなかなかに",
@@ -704,8 +705,8 @@ function data_define(){
 			mark_n: 1,
 			mark_x: 2,
 			mark_y: 1},
-		poem_45:{//あわれ
-			sound: audio_recording_45,
+		poem_45:{//あわれ	
+			sound1: recording_045_a, sound2: recording_045_b,
 			poem:"あはれとも　いふべき人は　思ほえで　身のいたづらに　なりぬべきかな",
 			name_e:"謙徳公",
 			part1:"あはれともいふべき人は思ほえで",
@@ -720,8 +721,8 @@ function data_define(){
 			mark_n: 1,
 			mark_x: 2,
 			mark_y: 1},
-		poem_46:{
-			sound: audio_recording_46,
+		poem_46:{	
+			sound1: recording_046_a, sound2: recording_046_b,
 			poem:"ゆらのとを　わたるふなびと　かぢをたえ　ゆくへもしらぬ　こひのみちかな",
 			name_e:"曾禰好忠",
 			part1:"ゆらのとをわたるふなびとかぢをたえ",
@@ -736,8 +737,8 @@ function data_define(){
 			mark_n: 1,
 			mark_x: 2,
 			mark_y: 1},
-		poem_47:{
-			sound: audio_recording_47,
+		poem_47:{	
+			sound1: recording_047_a, sound2: recording_047_b,
 			poem:"やへむぐら　しげれるやどの　さびしきに　ひとこそみえね　あきはきにけり",
 			name_e:"恵慶法師",
 			part1:"やへむぐらしげれるやどのさびしきに",
@@ -752,8 +753,8 @@ function data_define(){
 			mark_n: 1,
 			mark_x: 2,
 			mark_y: 1},
-		poem_48:{
-			sound: audio_recording_48,
+		poem_48:{	
+			sound1: recording_048_a, sound2: recording_048_b,
 			poem:"かぜをいたみ　いはうつなみの　おのれのみ　くだけてものを　おもふころかな",
 			name_e:"源重之",
 			part1:"かぜをいたみいはうつなみのおのれのみ",
@@ -768,8 +769,8 @@ function data_define(){
 			mark_n: 1,
 			mark_x: 2,
 			mark_y: 1},
-		poem_49:{
-			sound: audio_recording_49,
+		poem_49:{	
+			sound1: recording_049_a, sound2: recording_049_b,
 			poem:"みかきもり　ゑじのたくひの　よるはもえ　ひるはきえつつ　ものをこそおもへ",
 			name_e:"大中臣能宣",
 			part1:"みかきもりゑじのたくひのよるはもえ",
@@ -784,8 +785,8 @@ function data_define(){
 			mark_n: 1,
 			mark_x: 2,
 			mark_y: 1},
-		poem_50:{
-			sound: audio_recording_50,
+		poem_50:{	
+			sound1: recording_050_a, sound2: recording_050_b,
 			poem:"きみがため　をしからざりし　いのちさへ　ながくもがなと　おもひけるかな",
 			name_e:"藤原義孝",
 			part1:"きみがためをしからざりしいのちさへ",
@@ -800,8 +801,8 @@ function data_define(){
 			mark_n: 1,
 			mark_x: 2,
 			mark_y: 1},
-		poem_51:{
-			sound: audio_recording_51,
+		poem_51:{	
+			sound1: recording_051_a, sound2: recording_051_b,
 			poem:"かくとだに　えやはいぶきの　さしもぐさ　さしもしらじな　もゆるおもひを",
 			name_e:"藤原実方朝臣",
 			part1:"かくとだにえやはいぶきのさしもぐさ",
@@ -816,8 +817,8 @@ function data_define(){
 			mark_n: 0,
 			mark_x: 3,
 			mark_y: 1},
-		poem_52:{
-			sound: audio_recording_52,
+		poem_52:{	
+			sound1: recording_052_a, sound2: recording_052_b,
 			poem:"あけぬれば　くるるものとは　しりながら　なほうらめしき　あさぼらけかな",
 			name_e:"藤原道信朝臣",
 			part1:"あけぬればくるるものとはしりながら",
@@ -832,8 +833,8 @@ function data_define(){
 			mark_n: 1,
 			mark_x: 2,
 			mark_y: 1},
-		poem_53:{
-			sound: audio_recording_53,
+		poem_53:{	
+			sound1: recording_053_a, sound2: recording_053_b,
 			poem:"なげきつつ　ひとりぬるよの　あくるまは　いかにひさしき　ものとかはしる",
 			name_e:"右大将道綱母",
 			part1:"なげきつつひとりぬるよのあくるまは",
@@ -848,8 +849,8 @@ function data_define(){
 			mark_n: 1,
 			mark_x: 2,
 			mark_y: 1},
-		poem_54:{
-			sound: audio_recording_54,
+		poem_54:{	
+			sound1: recording_054_a, sound2: recording_054_b,
 			poem:"わすれじの　ゆくすゑまでは　かたければ　けふをかぎりの　いのちともがな",
 			name_e:"儀同三司母",
 			part1:"わすれじのゆくすゑまではかたければ",
@@ -864,8 +865,8 @@ function data_define(){
 			mark_n: 1,
 			mark_x: 2,
 			mark_y: 1},
-		poem_55:{
-			sound: audio_recording_55,//たき
+		poem_55:{	
+			sound1: recording_055_a, sound2: recording_055_b,
 			poem:"たきのおとは　たえてひさしく　なりぬれど　なこそながれて　なほきこえけれ",
 			name_e:"大納言公任",
 			part1:"たきのおとはたえてひさしくなりぬれど",
@@ -880,8 +881,8 @@ function data_define(){
 			mark_n: 1,
 			mark_x: 2,
 			mark_y: 1},
-		poem_56:{//あらざ
-			sound: audio_recording_56,
+		poem_56:{//あらざ	
+			sound1: recording_056_a, sound2: recording_056_b,
 			poem:"あらざらむ　このよのほかの　おもひでに　いまひとたびの　あふこともがな",
 			name_e:"和泉式部",
 			part1:"あらざらむこのよのほかのおもひでに",
@@ -896,8 +897,8 @@ function data_define(){
 			mark_n: 2,
 			mark_x: 1,
 			mark_y: 1},
-		poem_57:{
-			sound: audio_recording_57,
+		poem_57:{	
+			sound1: recording_057_a, sound2: recording_057_b,
 			poem:"めぐりあひて　みしやそれとも　わかぬまに　くもがくれにし　よはのつきかな",
 			name_e:"紫式部",
 			part1:"めぐりあひてみしやそれともわかぬまに",
@@ -912,8 +913,8 @@ function data_define(){
 			mark_n: 1,
 			mark_x: 2,
 			mark_y: 1},
-		poem_58:{//ありま
-			sound: audio_recording_58,
+		poem_58:{//ありま	
+			sound1: recording_058_a, sound2: recording_058_b,
 			poem:"ありまやま　ゐなのささはら　かぜふけば　いでそよひとを　わすれやはする",
 			name_e:"大弐三位",
 			part1:"ありまやまゐなのささはらかぜふけば",
@@ -928,8 +929,8 @@ function data_define(){
 			mark_n: 1,
 			mark_x: 2,
 			mark_y: 1},
-		poem_59:{
-			sound: audio_recording_59,
+		poem_59:{	
+			sound1: recording_059_a, sound2: recording_059_b,
 			poem:"やすらはで　ねなましものを　さよふけて　かたぶくまでの　つきをみしかな",
 			name_e:"赤染衛門",
 			part1:"やすらはでねなましものをさよふけて",
@@ -944,8 +945,8 @@ function data_define(){
 			mark_n: 3,
 			mark_x: 3,
 			mark_y: 1},
-		poem_60:{//おおえ
-			sound: audio_recording_60,
+		poem_60:{//おおえ	
+			sound1: recording_060_a, sound2: recording_060_b,
 			poem:"おほえやま　いくののみちの　とほければ　まだふみもみず　あまのはしだて",
 			name_e:"小式部内侍",
 			part1:"おほえやまいくののみちのとほければ",
@@ -959,8 +960,8 @@ function data_define(){
 			mark_n: 1,
 			mark_x: 2,
 			mark_y: 1},
-		poem_61:{
-			sound: audio_recording_61,
+		poem_61:{	
+			sound1: recording_061_a, sound2: recording_061_b,
 			poem:"いにしへの　ならのみやこの　やへざくら　けふここのへに　にほひぬるかな",
 			name_e:"伊勢大輔",
 			part1:"いにしへのならのみやこのやへざくら",
@@ -975,8 +976,8 @@ function data_define(){
 			mark_n: 4,
 			mark_x: 2,
 			mark_y: 2},
-		poem_62:{
-			sound: audio_recording_62,
+		poem_62:{	
+			sound1: recording_062_a, sound2: recording_062_b,
 			poem:"よをこめて　とりのそらねは　はかるとも　よにあふさかの　せきはゆるさじ",
 			name_e:"清少納言",
 			part1:"よをこめてとりのそらねははかるとも",
@@ -991,8 +992,8 @@ function data_define(){
 			mark_n: 1,
 			mark_x: 2,
 			mark_y: 1},
-		poem_63:{
-			sound: audio_recording_63,
+		poem_63:{	
+			sound1: recording_063_a, sound2: recording_063_b,
 			poem:"いまはただ　おもひたえなむ　とばかりを　ひとづてならで　いふよしもがな",
 			name_e:"左京大夫道雅",
 			part1:"いまはただおもひたえなむとばかりを",
@@ -1007,8 +1008,8 @@ function data_define(){
 			mark_n: 2,
 			mark_x: 1,
 			mark_y: 1},
-		poem_64:{//あさぼらけう
-			sound: audio_recording_64,
+		poem_64:{//あさぼらけう	
+			sound1: recording_064_a, sound2: recording_064_b,
 			poem:"あさぼらけ　うぢのかはぎり　たえだえに　あらはれわたる　せぜのあじろぎ",
 			name_e:"権中納言定頼",
 			part1:"あさぼらけうぢのかはぎりたえだえに",
@@ -1023,8 +1024,8 @@ function data_define(){
 			mark_n: 1,
 			mark_x: 2,
 			mark_y: 1},
-		poem_65:{
-			sound: audio_recording_65,
+		poem_65:{	
+			sound1: recording_065_a, sound2: recording_065_b,
 			poem:"うらみわび　ほさぬそでだに　あるものを　こひにくちなむ　なこそをしけれ",
 			name_e:"相模",
 			part1:"うらみわびほさぬそでだにあるものを",
@@ -1039,8 +1040,8 @@ function data_define(){
 			mark_n: 1,
 			mark_x: 2,
 			mark_y: 1},
-		poem_66:{
-			sound: audio_recording_66,
+		poem_66:{	
+			sound1: recording_066_a, sound2: recording_066_b,
 			poem:"もろともに　あはれとおもへ　やまざくら　はなよりほかに　しるひともなし",
 			name_e:"前大僧正行尊",
 			part1:"もろともにあはれとおもへやまざくら",
@@ -1055,8 +1056,8 @@ function data_define(){
 			mark_n: 1,
 			mark_x: 2,
 			mark_y: 1},
-		poem_67:{
-			sound: audio_recording_67,
+		poem_67:{	
+			sound1: recording_067_a, sound2: recording_067_b,
 			poem:"はるのよの　ゆめばかりなる　たまくらに　かひなくたたむ　なこそをしけれ",
 			name_e:"周防内侍",
 			part1:"はるのよのゆめばかりなるたまくらに",
@@ -1071,8 +1072,8 @@ function data_define(){
 			mark_n: 3,
 			mark_x: 3,
 			mark_y: 1},
-		poem_68:{
-			sound: audio_recording_68,
+		poem_68:{	
+			sound1: recording_068_a, sound2: recording_068_b,
 			poem:"こころにも　あらでうきよに　ながらへば　こひしかるべき　よはのつきかな",
 			name_e:"三条院",
 			part1:"こころにもあらでうきよにながらへば",
@@ -1087,8 +1088,8 @@ function data_define(){
 			mark_n: 1,
 			mark_x: 2,
 			mark_y: 1},
-		poem_69:{//あらし
-			sound: audio_recording_69,
+		poem_69:{//あらし	
+			sound1: recording_069_a, sound2: recording_069_b,
 			poem:"あらしふく　みむろのやまの　もみぢばは　たつたのかはの　にしきなりけり",
 			name_e:"能因法師",
 			part1:"あらしふくみむろのやまのもみぢばは",
@@ -1103,8 +1104,8 @@ function data_define(){
 			mark_n: 3,
 			mark_x: 3,
 			mark_y: 1},
-		poem_70:{
-			sound: audio_recording_70,
+		poem_70:{	
+			sound1: recording_070_a, sound2: recording_070_b,
 			poem:"さびしさに　やどをたちいでて　ながむれば　いづこもおなじ　あきのゆふぐれ",
 			name_e:"良暹法師",
 			part1:"さびしさにやどをたちいでてながむれば",
@@ -1119,8 +1120,8 @@ function data_define(){
 			mark_n: 1,
 			mark_x: 2,
 			mark_y: 1},
-		poem_71:{//あし
-			sound: audio_recording_71,
+		poem_71:{//あし	
+			sound1: recording_071_a, sound2: recording_071_b,
 			poem:"ゆふされば　かどたのいなば　おとづれて　あしのまろやに　あきかぜぞふく",
 			name_e:"大納言経信",
 			part1:"ゆふさればかどたのいなばおとづれて",
@@ -1135,8 +1136,8 @@ function data_define(){
 			mark_n: 1,
 			mark_x: 2,
 			mark_y: 1},
-		poem_72:{
-			sound: audio_recording_72,
+		poem_72:{	
+			sound1: recording_072_a, sound2: recording_072_b,
 			poem:"おとにきく　たかしのはまの　あだなみは　かけじやそでの　ぬれもこそすれ",
 			name_e:"祐子内親王家紀伊",
 			part1:"おとにきくたかしのはまのあだなみは",
@@ -1151,8 +1152,8 @@ function data_define(){
 			mark_n: 3,
 			mark_x: 3,
 			mark_y: 1},
-		poem_73:{
-			sound: audio_recording_73,
+		poem_73:{	
+			sound1: recording_073_a, sound2: recording_073_b,
 			poem:"たかさごの　をのへのさくら　さきにけり　とやまのかすみ　たたずもあらなむ",
 			name_e:"権中納言匡房",
 			part1:"たかさごのをのへのさくらさきにけり",
@@ -1167,8 +1168,8 @@ function data_define(){
 			mark_n: 0,
 			mark_x: 3,
 			mark_y: 1},
-		poem_74:{
-			sound: audio_recording_74,
+		poem_74:{	
+			sound1: recording_074_a, sound2: recording_074_b,
 			poem:"うかりける　ひとをはつせの　やまおろしよ　はげしかれとは　いのらぬものを",
 			name_e:"源俊頼朝臣",
 			part1:"うかりけるひとをはつせのやまおろしよ",
@@ -1183,8 +1184,8 @@ function data_define(){
 			mark_n: 1,
 			mark_x: 2,
 			mark_y: 1},
-		poem_75:{
-			sound: audio_recording_75,
+		poem_75:{	
+			sound1: recording_075_a, sound2: recording_075_b,
 			poem:"ちぎりおきし　させもがつゆを　いのちにて　あはれことしの　あきもいぬめり",
 			name_e:"藤原基俊",
 			part1:"ちぎりおきしさせもがつゆをいのちにて",
@@ -1199,8 +1200,8 @@ function data_define(){
 			mark_n: 1,
 			mark_x: 2,
 			mark_y: 1},
-		poem_76:{
-			sound: audio_recording_76,
+		poem_76:{	
+			sound1: recording_076_a, sound2: recording_076_b,
 			poem:"わたのはら　こぎいでてみれば　ひさかたの　くもゐにまがふ　おきつしらなみ",
 			name_e:"法性寺入道前関白太政大臣",
 			part1:"わたのはらこぎいでてみればひさかたの",
@@ -1215,8 +1216,8 @@ function data_define(){
 			mark_n: 1,
 			mark_x: 2,
 			mark_y: 1},
-		poem_77:{
-			sound: audio_recording_77,
+		poem_77:{	
+			sound1: recording_077_a, sound2: recording_077_b,
 			poem:"せをはやみ　いはにせかるる　たきがはの　われてもすゑに　あはむとぞおもふ",
 			name_e:"崇徳院",
 			part1:"せをはやみいはにせかるるたきがはの",
@@ -1231,8 +1232,8 @@ function data_define(){
 			mark_n: 1,
 			mark_x: 2,
 			mark_y: 1},
-		poem_78:{//あわじ
-			sound: audio_recording_78,
+		poem_78:{//あわじ	
+			sound1: recording_078_a, sound2: recording_078_b,
 			poem:"あはぢしま　かよふちどりの　なくこゑに　いくよねざめぬ　すまのせきもり",
 			name_e:"源兼昌",
 			part1:"あはぢしまかよふちどりのなくこゑに",
@@ -1247,8 +1248,8 @@ function data_define(){
 			mark_n: 1,
 			mark_x: 2,
 			mark_y: 1},
-		poem_79:{//あきか
-			sound: audio_recording_79,
+		poem_79:{//あきか	
+			sound1: recording_079_a, sound2: recording_079_b,
 			poem:"あきかぜに　たなびくくもの　たえまより　もれいづるつきの　かげのさやけさ",
 			name_e:"左京大夫顕輔",
 			part1:"あきかぜにたなびくくものたえまより",
@@ -1263,8 +1264,8 @@ function data_define(){
 			mark_n: 1,
 			mark_x: 2,
 			mark_y: 1},
-		poem_80:{
-			sound: audio_recording_80,
+		poem_80:{	
+			sound1: recording_080_a, sound2: recording_080_b,
 			poem:"ながからむ　こころもしらず　くろかみの　みだれてけさは　ものをこそおもへ",
 			name_e:"待賢門院堀河",
 			part1:"ながからむこころもしらずくろかみの",
@@ -1279,8 +1280,8 @@ function data_define(){
 			mark_n: 1,
 			mark_x: 2,
 			mark_y: 1},
-		poem_81:{
-			sound: audio_recording_81,
+		poem_81:{	
+			sound1: recording_081_a, sound2: recording_081_b,
 			poem:"ほととぎす　なきつるかたを　ながむれば　ただありあけの　つきぞのこれる",
 			name_e:"後徳大寺左大臣",
 			part1:"ほととぎすなきつるかたをながむれば",
@@ -1295,8 +1296,8 @@ function data_define(){
 			mark_n: 3,
 			mark_x: 3,
 			mark_y: 1},
-		poem_82:{
-			sound: audio_recording_82,
+		poem_82:{	
+			sound1: recording_082_a, sound2: recording_082_b,
 			poem:"おもひわび　さてもいのちは　あるものを　うきにたへぬは　なみだなりけり",
 			name_e:"道因法師",
 			part1:"おもひわびさてもいのちはあるものを",
@@ -1311,8 +1312,8 @@ function data_define(){
 			mark_n: 1,
 			mark_x: 2,
 			mark_y: 1},
-		poem_83:{
-			sound: audio_recording_83,
+		poem_83:{	
+			sound1: recording_083_a, sound2: recording_083_b,
 			poem:"よのなかよ　みちこそなけれ　おもひいる　やまのおくにも　しかぞなくなる",
 			name_e:"皇太后宮大夫俊成",
 			part1:"よのなかよみちこそなけれおもひいる",
@@ -1327,8 +1328,8 @@ function data_define(){
 			mark_n: 1,
 			mark_x: 2,
 			mark_y: 1},
-		poem_84:{//ながら
-			sound: audio_recording_84,
+		poem_84:{//ながら	
+			sound1: recording_084_a, sound2: recording_084_b,
 			poem:"ながらへば　またこのごろや　しのばれむ　うしとみしよぞ　いまはこひしき",
 			name_e:"藤原清輔朝臣",
 			part1:"ながらへばまたこのごろやしのばれむ",
@@ -1343,8 +1344,8 @@ function data_define(){
 			mark_n: 1,
 			mark_x: 2,
 			mark_y: 1},
-		poem_85:{
-			sound: audio_recording_85,
+		poem_85:{	
+			sound1: recording_085_a, sound2: recording_085_b,
 			poem:"よもすがら　ものおもふころは　あけやらで　ねやのひまさへ　つれなかりけり",
 			name_e:"俊恵法師",
 			part1:"よもすがらものおもふころはあけやらで",
@@ -1359,8 +1360,8 @@ function data_define(){
 			mark_n: 0,
 			mark_x: 3,
 			mark_y: 1},
-		poem_86:{
-			sound: audio_recording_86,
+		poem_86:{	
+			sound1: recording_086_a, sound2: recording_086_b,
 			poem:"なげけとて　つきやはものを　おもはする　かこちがほなる　わがなみだかな",
 			name_e:"西行法師",
 			part1:"なげけとてつきやはものをおもはする",
@@ -1375,8 +1376,8 @@ function data_define(){
 			mark_n: 3,
 			mark_x: 3,
 			mark_y: 1},
-		poem_87:{
-			sound: audio_recording_87,
+		poem_87:{	
+			sound1: recording_087_a, sound2: recording_087_b,
 			poem:"むらさめの　つゆもまだひぬ　まきのはに　きりたちのぼる　あきのゆふぐれ",
 			name_e:"寂蓮法師",
 			part1:"むらさめのつゆもまだひぬまきのはに",
@@ -1391,8 +1392,8 @@ function data_define(){
 			mark_n: 0,
 			mark_x: 3,
 			mark_y: 1},
-		poem_88:{//なにわえ
-			sound: audio_recording_88,
+		poem_88:{//なにわえ	
+			sound1: recording_088_a, sound2: recording_088_b,
 			poem:"なにはえの　あしのかりねの　ひとよゆゑ　みをつくしてや　こひわたるべき",
 			name_e:"皇嘉門院別当",
 			part1:"なにはえのあしのかりねのひとよゆゑ",
@@ -1407,8 +1408,8 @@ function data_define(){
 			mark_n: 1,
 			mark_x: 2,
 			mark_y: 1},
-		poem_89:{
-			sound: audio_recording_89,
+		poem_89:{	
+			sound1: recording_089_a, sound2: recording_089_b,
 			poem:"たまのをよ　たえなばたえね　ながらへば　しのぶることの　よわりもぞする",
 			name_e:"式子内親王",
 			part1:"たまのをよたえなばたえねながらへば",
@@ -1423,8 +1424,8 @@ function data_define(){
 			mark_n: 1,
 			mark_x: 2,
 			mark_y: 1},
-		poem_90:{
-			sound: audio_recording_90,
+		poem_90:{	
+			sound1: recording_090_a, sound2: recording_090_b,
 			poem:"みせばやな　をじまのあまの　そでだにも　ぬれにぞぬれし　いろはかはらず",
 			name_e:"殷富門院大輔",
 			part1:"みせばやなをじまのあまのそでだにも",
@@ -1439,8 +1440,8 @@ function data_define(){
 			mark_n: 0,
 			mark_x: 3,
 			mark_y: 1},
-		poem_91:{
-			sound: audio_recording_91,
+		poem_91:{	
+			sound1: recording_091_a, sound2: recording_091_b,
 			poem:"きりぎりす　なくやしもよの　さむしろに　ころもかたしき　ひとりかもねむ",
 			name_e:"後京極摂政前太政大臣",
 			part1:"きりぎりすなくやしもよのさむしろに",
@@ -1455,8 +1456,8 @@ function data_define(){
 			mark_n: 1,
 			mark_x: 2,
 			mark_y: 1},
-		poem_92:{
-			sound: audio_recording_92,
+		poem_92:{	
+			sound1: recording_092_a, sound2: recording_092_b,
 			poem:"わがそでは　しほひにみえぬ　おきのいしの　ひとこそしらね　かわくまもなし",
 			name_e:"二条院讃岐",
 			part1:"わがそではしほひにみえぬおきのいしの",
@@ -1471,8 +1472,8 @@ function data_define(){
 			mark_n: 2,
 			mark_x: 1,
 			mark_y: 1},
-		poem_93:{
-			sound: audio_recording_93,
+		poem_93:{	
+			sound1: recording_093_a, sound2: recording_093_b,
 			poem:"よのなかは　つねにもがもな　なぎさこぐ　あまのをぶねの　つなでかなしも",
 			name_e:"鎌倉右大臣",
 			part1:"よのなかはつねにもがもななぎさこぐ",
@@ -1487,8 +1488,8 @@ function data_define(){
 			mark_n: 1,
 			mark_x: 2,
 			mark_y: 1},
-		poem_94:{
-			sound: audio_recording_94,
+		poem_94:{	
+			sound1: recording_094_a, sound2: recording_094_b,
 			poem:"みよしのの　やまのあきかぜ　さよふけて　ふるさとさむく　ころもうつなり",
 			name_e:"参議雅経",
 			part1:"みよしののやまのあきかぜさよふけて",
@@ -1503,8 +1504,8 @@ function data_define(){
 			mark_n: 1,
 			mark_x: 2,
 			mark_y: 1},
-		poem_95:{
-			sound: audio_recording_95,
+		poem_95:{	
+			sound1: recording_095_a, sound2: recording_095_b,
 			poem:"おほけなく　うきよのたみに　おほふかな　わがたつそまに　すみぞめのそで",
 			name_e:"前大僧正慈円",
 			part1:"おほけなくうきよのたみにおほふかな",
@@ -1519,8 +1520,8 @@ function data_define(){
 			mark_n: 1,
 			mark_x: 2,
 			mark_y: 1},
-		poem_96:{
-			sound: audio_recording_96,
+		poem_96:{	
+			sound1: recording_096_a, sound2: recording_096_b,
 			poem:"はなさそふ　あらしのにはの　ゆきならで　ふりゆくものは　わがみなりけり",
 			name_e:"入道前太政大臣",
 			part1:"はなさそふあらしのにはのゆきならで",
@@ -1535,8 +1536,8 @@ function data_define(){
 			mark_n: 1,
 			mark_x: 2,
 			mark_y: 1},
-		poem_97:{
-			sound: audio_recording_97,
+		poem_97:{	
+			sound1: recording_097_a, sound2: recording_097_b,
 			poem:"こぬひとを　まつほのうらの　ゆふなぎに　やくやもしほの　みもこがれつつ",
 			name_e:"権中納言定家",
 			part1:"こぬひとをまつほのうらのゆふなぎに",
@@ -1551,8 +1552,8 @@ function data_define(){
 			mark_n: 1,
 			mark_x: 2,
 			mark_y: 1},
-		poem_98:{
-			sound: audio_recording_98,
+		poem_98:{	
+			sound1: recording_098_a, sound2: recording_098_b,
 			poem:"かぜそよぐ　ならのをがはの　ゆふぐれは　みそぎぞなつの　しるしなりける",
 			name_e:"従二位家隆",
 			part1:"かぜそよぐならのをがはのゆふぐれは",
@@ -1567,8 +1568,8 @@ function data_define(){
 			mark_n: 1,
 			mark_x: 2,
 			mark_y: 1},
-		poem_99:{
-			sound: audio_recording_99,
+		poem_99:{	
+			sound1: recording_099_a, sound2: recording_099_b,
 			poem:"ひともをし　ひともうらめし　あぢきなく　よをおもふゆゑに　ものおもふみは",
 			name_e:"後鳥羽院",
 			part1:"ひともをしひともうらめしあぢきなく",
@@ -1583,8 +1584,8 @@ function data_define(){
 			mark_n: 1,
 			mark_x: 2,
 			mark_y: 1},
-		poem_100:{
-			sound: audio_recording_100,
+		poem_100:{	
+			sound1: recording_100_a, sound2: recording_100_b,
 			poem:"ももしきや　ふるきのきばの　しのぶにも　なほあまりある　むかしなりけり",
 			name_e:"順徳院",
 			part1:"ももしきやふるきのきばのしのぶにも",
@@ -1602,3 +1603,6 @@ function data_define(){
 
 	}
 }
+
+
+

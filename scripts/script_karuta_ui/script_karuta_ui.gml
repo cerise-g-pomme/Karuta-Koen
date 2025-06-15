@@ -58,7 +58,7 @@ function karuta_ui(x,y,scale,index){
 	var left_button_scale_08=scale*0.6;
 	var bx=x-430*left_button_scale;
 	var by=y-500*left_button_scale;
-	var is_playing = audio_is_playing(poem_data.sound);
+	var is_playing = audio_is_playing(poem_data.sound1);
 	var speak_sprite = is_playing ? sprite_speak : sprite_speak_mute;
 	// Use precalculated rotation angle
 	var rotation = current_time * 0.015;
@@ -68,9 +68,17 @@ function karuta_ui(x,y,scale,index){
 	if (ui_button_sprite_draw(bx,by,sprite_button_sound,left_button_scale_08)||audio_queue) {
 	    audio_queue = false;
 	    audio_stop_all();
-	    audio_play_sound(poem_data.sound, 1, false);
+	    audio_play_sound(poem_data.sound1, 1, false);
 	    mouse_clear(mb_left);
 	}
+    //Menu buttons
+	button_color=c_white;
+    var right_button_scale=scale*0.6;
+    bx=100*right_button_scale;
+    by=100*right_button_scale;
+    var step=130*right_button_scale;
+	//Draw the buttons
+    if (ui_button_sprite_draw(bx,by,sprite_button_back,right_button_scale)){ mode=0;mouse_clear(mb_left);} by+=step;
     //Option buttons
 	button_color=546816;
     var right_button_scale=scale*0.6;
@@ -88,6 +96,8 @@ function karuta_ui(x,y,scale,index){
     if (ui_button_sprite_draw(bx,by,sprite_button_poem,right_button_scale)){ settings_poem=!settings_poem;mouse_clear(mb_left);save_settings();} by+=step;
     if (ui_button_sprite_draw(bx,by,sprite_button_syllable,right_button_scale)){ settings_syllable=!settings_syllable;mouse_clear(mb_left);save_settings();} by+=step;
     if (ui_button_sprite_draw(bx,by,sprite_button_romaji,right_button_scale)){ settings_romaji=!settings_romaji;mouse_clear(mb_left);save_settings();} by+=step;
+	if (ui_button_sprite_draw(bx,by,sprite_button_autoplay,right_button_scale)){ settings_autoplay=!settings_autoplay;mouse_clear(mb_left);save_settings();} by+=step;
+	if (ui_button_sprite_draw(bx,by,sprite_button_language,right_button_scale)){ settings_language=!settings_language;mouse_clear(mb_left);save_settings();} by+=step;
     //SRS buttons
 	button_color=c_white;
     draw_set_color(c_black);
@@ -97,9 +107,11 @@ function karuta_ui(x,y,scale,index){
     var font_scale=srs_scale;
     var proceed=false;
     var srs_labels=["Bad","Okay","Good","Great"];
+	if (settings_language)srs_labels=["わるい","大丈夫","いい","すごい"];
     for (var i=0;i<=3;++i){
         var sx=x+(i-1.5)*srs_offset_x;
         if (ui_button_sprite_index_draw(sx,srs_y,sprite_srs,srs_scale,i+1)){
+			srs_review(index,i+1);
             proceed=true;
             mouse_clear(mb_left);
 		}
@@ -111,8 +123,37 @@ function karuta_ui(x,y,scale,index){
         choose_old=choose_poem;
         mouse_clear(mb_left);
         drop_value=1;
-		choose_poem=irandom_range(1,100)
+		choose_poem=srs_select();
+		//Play sound if autoplay
+		if (settings_autoplay){
+		    var poem_name="poem_"+string(choose_poem);
+		    var poem_data=struct_get(poem_struct,poem_name);
+			audio_stop_all();
+		    audio_play_sound(poem_data.sound1, 1, false);
+		    mouse_clear(mb_left);
+		}
 	}
+	//Unlock 5
+	button_color=546816;
+	if ui_button_sprite_draw(x+srs_offset_x*2.75,srs_y,sprite_srs,srs_scale,i+1){
+        mouse_clear(mb_left);
+		//Loop through and unlock 5
+		ini_open("srs_data.sav");
+		var unlock=5;
+		for (var i=0;i<100;++i){
+		    if (srs_system[# 1,i]==false){
+				string_index=string(i+1);
+				srs_system[# 1,i]=true;
+				srs_system[# 4,i]=100;
+				ini_write_real(string_index,"unlocked",true);
+				unlock--;
+				if (unlock==0)break;
+			}
+		}
+		ini_close();
+	}
+	var string_add=["+5 New","+5入れる"]
+	draw_text_transformed(x+srs_offset_x*2.75,srs_y,string_add[settings_language],font_scale,font_scale,0);
 }
 
 

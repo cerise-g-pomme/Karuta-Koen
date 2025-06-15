@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"recording_034_a",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":0,
+  "conversionMode":0,
+  "duration":7.393832,
+  "name":"recording_034_a",
+  "parent":{
+    "name":"Recordings",
+    "path":"folders/Recordings.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"recording_034_a.ogg",
+  "type":0,
+  "volume":1.0,
+}

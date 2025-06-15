@@ -28,7 +28,7 @@ function ui_button_sprite_index_draw(x,y,sprite,scale,index){
 	var draw_x=x,draw_y=y;
 	var mouse=(abs(x-input_x)<(sprite_w*0.5))&&(abs(y-input_y)<(sprite_h*0.5));
 	//Mouseover
-	scale*=1.05;
+	if (mouse)scale*=1.05;
 	if (mouse&&mouse_check_button(mb_left))||keyboard_check(ord(string(index))){
 		//Mouse press
 		draw_x+=offset;
