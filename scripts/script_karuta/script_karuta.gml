@@ -49,6 +49,12 @@ function karuta_draw(x,y,scale,index,alpha){
             }
         }
     }
+    //Draw mark
+    if (flipped && settings_mark){
+        var mark_x=x-155*scale*flip+-155*scale*flip*(poem_data.mark_x-3);
+        var mark_y=y-310*scale+150*scale*(poem_data.mark_y-1);
+        draw_sprite_ext(sprite_mark,poem_data.mark_n,mark_x,mark_y,-scale*flip,scale,0,c_white,alpha);
+    }
     //Text color for torifuda
     draw_set_color(settings_red && red_count ? c_red : c_black);
     draw_set_alpha(alpha);
@@ -59,21 +65,26 @@ function karuta_draw(x,y,scale,index,alpha){
         var y_step=150*scale;
         var x_step=-155*scale*flip;
         var text_scale=scale*2;
+		var furi_scale=text_scale*0.25;
+		var furi_offset=160*furi_scale;
         var torifuda_remaining=torifuda_str;
+		var character="";
+		var xx,yy;
         for (var i=3;i>0;--i){
             var clip=string_copy(torifuda_remaining,1,5);
             torifuda_remaining=string_copy(torifuda_remaining,6,string_length(torifuda_remaining)-5);
             for (var j=0;j < 5;++j){
-                draw_text_transformed(x0+i*x_step-3*x_step,y0+j*y_step,string_char_at(clip,j+1),-text_scale*flip,text_scale,0);
+				character=string_char_at(clip,j+1);
+				xx=x0+i*x_step-3*x_step;
+				yy=y0+j*y_step;
+				if (settings_furigana){
+					draw_sprite_ext(sprite_small,0,xx,yy-furi_offset,text_scale*0.6,text_scale*0.6,0,c_white,1);
+					draw_text_transformed(xx,yy-furi_offset,hiragana_to_romaji(character),-furi_scale*flip,furi_scale,0);
+				}
+                draw_text_transformed(xx,yy,character,-text_scale*flip,text_scale,0);
                 if (--red_count == 0) draw_set_color(c_black);
             }
         }
-    }
-    //Draw mark
-    if (flipped && settings_mark){
-        var mark_x=x-155*scale*flip+-155*scale*flip*(poem_data.mark_x-3);
-        var mark_y=y-310*scale+150*scale*(poem_data.mark_y-1);
-        draw_sprite_ext(sprite_mark,poem_data.mark_n,mark_x,mark_y,-scale*flip,scale,0,c_white,alpha);
     }
 }
 function karuta_simple_draw(x,y,scale,index,alpha){

@@ -12,6 +12,7 @@ function init_settings(){
 	settings_romaji=true;
 	settings_autoplay=true;
 	settings_language=0;
+	settings_furigana=false;
 	load_settings();
 }
 function save_settings(){
@@ -28,6 +29,7 @@ function save_settings(){
 	ini_write_real("setting","romanized_syllables",settings_romaji);
 	ini_write_real("setting","autoplay",settings_autoplay);
 	ini_write_real("setting","language",settings_language);
+	ini_write_real("setting","furigana",settings_furigana);
 	ini_close();
 }
 function load_settings(){
@@ -45,6 +47,7 @@ function load_settings(){
 	settings_romaji=ini_read_real("setting","romanized_syllables",0);
 	settings_autoplay=ini_read_real("setting","autoplay",0);
 	settings_language=ini_read_real("setting","language",0);
+	settings_furigana=ini_read_real("setting","furigana",0);
 	ini_close();
 	}
 }

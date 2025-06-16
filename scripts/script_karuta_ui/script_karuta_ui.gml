@@ -107,6 +107,7 @@ function karuta_ui(x,y,scale,index){
     if (ui_button_sprite_draw(bx,by,sprite_button_romaji,right_button_scale)){ settings_romaji=!settings_romaji;mouse_clear(mb_left);save_settings();} by+=step;
 	if (ui_button_sprite_draw(bx,by,sprite_button_autoplay,right_button_scale)){ settings_autoplay=!settings_autoplay;mouse_clear(mb_left);save_settings();} by+=step;
 	if (ui_button_sprite_draw(bx,by,sprite_button_language,right_button_scale)){ settings_language=!settings_language;mouse_clear(mb_left);save_settings();} by+=step;
+	if (ui_button_sprite_draw(bx,by,sprite_button_furigana,right_button_scale)){ settings_furigana=!settings_furigana;mouse_clear(mb_left);save_settings();} by+=step;
     //SRS buttons
 	button_color=c_white;
     draw_set_color(c_black);

@@ -15,6 +15,7 @@ function ui_button_sprite_draw(x,y,sprite,scale){
 		}
 		if mouse_check_button_released(mb_left){
 			input=true;
+			audio_play_sound(sound_click,1,false);
 		}
 	}
 	draw_sprite_ext(sprite,0,draw_x,draw_y,scale,scale,0,button_color,1);
@@ -36,6 +37,7 @@ function ui_button_sprite_index_draw(x,y,sprite,scale,index){
 	}
 	if (mouse&&mouse_check_button_released(mb_left))||keyboard_check_released(ord(string(index))){
 		input=true;
+		audio_play_sound(sound_click,1,false);
 	}
 	draw_sprite_ext(sprite,0,draw_x,draw_y,scale,scale,0,button_color,1);
 	return input;
