@@ -20,7 +20,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.13.0.190",
+    "IDEVersion":"2024.13.1.193",
   },
   "name":"Karuta Koen",
   "resources":[
@@ -241,6 +241,7 @@
     {"id":{"name":"recording_099_b","path":"sounds/recording_099_b/recording_099_b.yy",},},
     {"id":{"name":"recording_100_a","path":"sounds/recording_100_a/recording_100_a.yy",},},
     {"id":{"name":"recording_100_b","path":"sounds/recording_100_b/recording_100_b.yy",},},
+    {"id":{"name":"sprite_back_panel","path":"sprites/sprite_back_panel/sprite_back_panel.yy",},},
     {"id":{"name":"sprite_back","path":"sprites/sprite_back/sprite_back.yy",},},
     {"id":{"name":"sprite_blank","path":"sprites/sprite_blank/sprite_blank.yy",},},
     {"id":{"name":"sprite_button_autoplay","path":"sprites/sprite_button_autoplay/sprite_button_autoplay.yy",},},
@@ -252,6 +253,7 @@
     {"id":{"name":"sprite_button_next","path":"sprites/sprite_button_next/sprite_button_next.yy",},},
     {"id":{"name":"sprite_button_number","path":"sprites/sprite_button_number/sprite_button_number.yy",},},
     {"id":{"name":"sprite_button_outline","path":"sprites/sprite_button_outline/sprite_button_outline.yy",},},
+    {"id":{"name":"sprite_button_pause","path":"sprites/sprite_button_pause/sprite_button_pause.yy",},},
     {"id":{"name":"sprite_button_poem","path":"sprites/sprite_button_poem/sprite_button_poem.yy",},},
     {"id":{"name":"sprite_button_red","path":"sprites/sprite_button_red/sprite_button_red.yy",},},
     {"id":{"name":"sprite_button_romaji","path":"sprites/sprite_button_romaji/sprite_button_romaji.yy",},},

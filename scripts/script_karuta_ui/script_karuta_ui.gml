@@ -61,16 +61,25 @@ function karuta_ui(x,y,scale,index){
 	var is_playing = audio_is_playing(poem_data.sound1);
 	var speak_sprite = is_playing ? sprite_speak : sprite_speak_mute;
 	// Use precalculated rotation angle
-	var rotation = current_time * 0.015;
-	// Draw the sprite
-	draw_sprite_ext(speak_sprite,rotation,bx-120*left_button_scale,by,left_button_scale,left_button_scale_half,0,c_white,1);
+	var rotation=(current_time*0.015)*!audio_is_paused(poem_data.sound1);
 	// Check for click
-	if (ui_button_sprite_draw(bx,by,sprite_button_sound,left_button_scale_08)||audio_queue) {
+	if (ui_button_sprite_draw(bx,by,sprite_button_sound,left_button_scale_08)||audio_queue){
 	    audio_queue = false;
 	    audio_stop_all();
 	    audio_play_sound(poem_data.sound1, 1, false);
 	    mouse_clear(mb_left);
 	}
+	// Check for click
+	if (ui_button_sprite_draw(bx-130*left_button_scale_08,by,sprite_button_pause,left_button_scale_08))
+	|| keyboard_check_pressed(vk_space){
+		if audio_is_paused(poem_data.sound1){
+			audio_resume_sound(poem_data.sound1);
+		}else{
+			audio_pause_sound(poem_data.sound1)
+		}
+	}
+	// Draw the sprite
+	draw_sprite_ext(speak_sprite,rotation,bx-220*left_button_scale,by,left_button_scale,left_button_scale_half,0,c_white,1);
     //Menu buttons
 	button_color=c_white;
     var right_button_scale=scale*0.6;
@@ -156,7 +165,125 @@ function karuta_ui(x,y,scale,index){
 	draw_text_transformed(x+srs_offset_x*2.75,srs_y,string_add[settings_language],font_scale,font_scale,0);
 }
 
-
+function info_ui(x,y,scale,index){
+    //Get poem data
+    var poem_name="poem_"+string(index);
+    var poem_data=struct_get(poem_struct,poem_name);
+    var poem_kimaraji=poem_data.kimariji;
+    var poem_kimaraji_romanji=hiragana_to_romaji(poem_kimaraji);
+    var torifuda=poem_data.part2;
+    //Draw full poem background
+	button_color=546816;
+    draw_set_alpha(1);
+    draw_set_font(font_hirigana);
+	draw_set_halign(fa_left);
+	draw_set_valign(fa_top);
+	draw_set_color(c_white);
+	//Draw panel 1
+	draw_sprite_ext(sprite_back_panel,0,x+640*scale,y-235*scale,scale,scale,0,merge_color(c_white,c_black,0.9),1);
+	var poem_text=poem_data.poem;
+	draw_text_ext_transformed(x+340*scale,y-430*scale,poem_text,-1,550*scale,scale*0.7,scale*0.7,0);
+	//Draw panel 2
+	draw_sprite_ext(sprite_back_panel,0,x+640*scale,y+190*scale,scale,scale,0,merge_color(c_white,c_black,0.9),1);
+	var english_text=string_replace_all(poem_data.translation,"|","\n");
+	draw_text_ext_transformed(x+340*scale,y-0*scale,english_text,-1,1600*scale,scale*0.54,scale*0.54,0);
+	//Draw poets
+	draw_set_halign(fa_right);
+	var poet1=poem_data.name_e;
+	var poet2=poem_data.name_j;
+	draw_text_transformed(x+940*scale,y-100*scale,poet1,scale*0.6,scale*0.6,0);
+	draw_text_transformed(x+940*scale,y+330*scale,poet2,scale*0.6,scale*0.6,0);
+	//Reset draw
+	draw_set_halign(fa_center);
+	draw_set_valign(fa_middle);
+    //Menu buttons
+	button_color=c_white;
+    var right_button_scale=scale*0.6;
+    bx=100*right_button_scale;
+    by=100*right_button_scale;
+    var step=130*right_button_scale;
+	//Draw the buttons
+    if (ui_button_sprite_draw(bx,by,sprite_button_back,right_button_scale)){ mode=0;mouse_clear(mb_left);} by+=step;
+    //Option buttons
+	button_color=546816;
+    var right_button_scale=scale*0.6;
+    bx=window_get_width()-100*right_button_scale;
+    by=100*right_button_scale;
+    var step=130*right_button_scale;
+	//Draw the buttons
+	if (ui_button_sprite_draw(bx,by,sprite_button_number,right_button_scale)){ settings_number=!settings_number;mouse_clear(mb_left);save_settings();} by+=step;
+	if (ui_button_sprite_draw(bx,by,sprite_button_language,right_button_scale)){ settings_language=!settings_language;mouse_clear(mb_left);save_settings();} by+=step;
+    //SRS buttons
+	button_color=c_white;
+    draw_set_color(c_black);
+    var srs_offset_x=145*scale;
+    var srs_y=y+480*scale;
+    var srs_scale=scale*0.5;
+    var font_scale=srs_scale;
+    var proceed=false;
+    var srs_labels=["Bad","Okay","Good","Great"];
+	if (settings_language)srs_labels=["わるい","大丈夫","いい","すごい"];
+    for (var i=0;i<=3;++i){
+        var sx=x+(i-1.5)*srs_offset_x;
+        if (ui_button_sprite_index_draw(sx,srs_y,sprite_srs,srs_scale,i+1)){
+			srs_review(index,i+1);
+            proceed=true;
+            mouse_clear(mb_left);
+		}
+        draw_text_transformed(sx,srs_y,srs_labels[i],font_scale,font_scale,0);
+		draw_text_transformed(sx-57*scale,srs_y-14*scale,string(i+1)+".",font_scale*0.5,font_scale*0.5,0);
+	}
+    if (proceed){
+        audio_stop_all();
+        choose_old=choose_poem;
+        mouse_clear(mb_left);
+        drop_value=1;
+		choose_poem=srs_select();
+		//Play sound if autoplay
+		if (settings_autoplay){
+		    var poem_name="poem_"+string(choose_poem);
+		    var poem_data=struct_get(poem_struct,poem_name);
+			audio_stop_all();
+		    audio_play_sound(poem_data.sound1, 1, false);
+		    mouse_clear(mb_left);
+		}
+	}
+	//Unlock 5
+	button_color=546816;
+	if ui_button_sprite_draw(x+srs_offset_x*2.75,srs_y,sprite_srs,srs_scale,i+1){
+        mouse_clear(mb_left);
+		//Loop through and unlock 5
+		ini_open("srs_data.sav");
+		var unlock=5;
+		for (var i=0;i<100;++i){
+		    if (srs_system[# 1,i]==false){
+				string_index=string(i+1);
+				srs_system[# 1,i]=true;
+				srs_system[# 4,i]=100;
+				ini_write_real(string_index,"unlocked",true);
+				unlock--;
+				if (unlock==0)break;
+			}
+		}
+		ini_close();
+	}
+	var string_add=["+5 New","+5入れる"]
+	draw_text_transformed(x+srs_offset_x*2.75,srs_y,string_add[settings_language],font_scale,font_scale,0);
+}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	/*
 	if(ui_button_sprite_draw(bx,by+250*left_button_scale,sprite_button_next,left_button_scale)){
 		audio_stop_all();

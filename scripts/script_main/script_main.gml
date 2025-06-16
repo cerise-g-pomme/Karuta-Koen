@@ -30,6 +30,17 @@ function main_draw(){
 			if (drop_value>0.01)karuta_draw(center_x,center_y,scale,choose_old,1);
 			karuta_draw(center_x+100*scale*drop_value,center_y-300*scale*drop_value,scale,choose_poem,drop_smoothed);
 	        break;
+	    case 2://Memory SRS
+			var center_x=window_get_width()*0.32;
+			var center_y=window_get_height()*0.46;
+			var scale=min(1,window_get_height()/1050);
+			flip_tween=flip_tween*0.8+flip_state*0.2;
+			info_ui(center_x,center_y,scale,choose_poem);
+			var drop_smoothed=math_ease(clamp((1-drop_value)*1.2,0,1));
+			drop_value=max(0,drop_value*0.8);
+			if (drop_value>0.01)karuta_simple_draw(center_x,center_y,scale,choose_old,1);
+			karuta_simple_draw(center_x+100*scale*drop_value,center_y-300*scale*drop_value,scale,choose_poem,drop_smoothed);
+	        break;
 	    default://Main menu
 			var button_string;
 			draw_set_font(font_hirigana);
@@ -48,6 +59,13 @@ function main_draw(){
 				mode=1;
 			}
 			button_string=["Memory Drills","記憶トレーニング"];
+			draw_text_transformed(center_x,button_y,button_string[settings_language],text_scale,text_scale,0);button_y+=button_o;
+			//Button
+			if ui_button_sprite_draw(center_x,button_y,sprite_button_wide,scale){
+				//Execute button
+				mode=2;
+			}
+			button_string=["Poetry Info Drills","詩の知識トレーニング"];
 			draw_text_transformed(center_x,button_y,button_string[settings_language],text_scale,text_scale,0);button_y+=button_o;
 			//Button
 			if ui_button_sprite_draw(center_x,button_y,sprite_button_wide,scale){

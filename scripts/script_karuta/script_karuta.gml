@@ -76,3 +76,49 @@ function karuta_draw(x,y,scale,index,alpha){
         draw_sprite_ext(sprite_mark,poem_data.mark_n,mark_x,mark_y,-scale*flip,scale,0,c_white,alpha);
     }
 }
+function karuta_simple_draw(x,y,scale,index,alpha){
+    //Get poem data
+    var poem_name="poem_"+string(index);
+    var poem_data=struct_get(poem_struct,poem_name);
+    var red_str=poem_data.second_verse_answer;
+    var red_count=string_length(red_str);
+    var torifuda=poem_data.part2;
+    var torifuda_str=remove_dakuten(torifuda);
+    //Card flip
+    var flip=1-flip_tween*2;
+    var flipped=(flip_tween>0.5);
+    draw_sprite_ext(sprite_card,flipped,x,y,scale*flip,scale,0,c_white,alpha);
+    //Basic draw settings
+    draw_set_halign(fa_center);
+    draw_set_valign(fa_middle);
+    draw_set_font(font_hirigana_cursive);
+    draw_set_alpha(alpha);
+    //Draw number
+    if (settings_number && flipped){
+        var num_scale=scale*0.6;
+        var num_y=y-418*scale;
+        draw_set_color(c_white);
+        draw_sprite_ext(sprite_circle,0,x,num_y,num_scale*flip,num_scale,0,c_white,alpha);
+        draw_text_transformed(x,num_y,index,-num_scale*flip,num_scale,0);
+    }
+    //Text color for torifuda
+    draw_set_color(c_black);
+    draw_set_alpha(alpha);
+    //Draw torifuda
+    if (flipped){
+        var x0=x-155*scale*flip;
+        var y0=y-310*scale;
+        var y_step=150*scale;
+        var x_step=-155*scale*flip;
+        var text_scale=scale*2;
+        var torifuda_remaining=torifuda_str;
+        for (var i=3;i>0;--i){
+            var clip=string_copy(torifuda_remaining,1,5);
+            torifuda_remaining=string_copy(torifuda_remaining,6,string_length(torifuda_remaining)-5);
+            for (var j=0;j < 5;++j){
+                draw_text_transformed(x0+i*x_step-3*x_step,y0+j*y_step,string_char_at(clip,j+1),-text_scale*flip,text_scale,0);
+                if (--red_count == 0) draw_set_color(c_black);
+            }
+        }
+    }
+}
