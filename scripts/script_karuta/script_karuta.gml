@@ -65,7 +65,7 @@ function karuta_draw(x,y,scale,index,alpha){
         var y_step=150*scale;
         var x_step=-155*scale*flip;
         var text_scale=scale*2;
-		var furi_scale=text_scale*0.25;
+		var furi_scale=text_scale*0.2;
 		var furi_offset=160*furi_scale;
         var torifuda_remaining=torifuda_str;
 		var character="";
@@ -78,7 +78,7 @@ function karuta_draw(x,y,scale,index,alpha){
 				xx=x0+i*x_step-3*x_step;
 				yy=y0+j*y_step;
 				if (settings_furigana){
-					draw_sprite_ext(sprite_small,0,xx,yy-furi_offset,text_scale*0.6,text_scale*0.6,0,c_white,1);
+					draw_sprite_ext(sprite_small,0,xx,yy-furi_offset,text_scale*0.6,text_scale*0.6,0,c_white,alpha);
 					draw_text_transformed(xx,yy-furi_offset,hiragana_to_romaji(character),-furi_scale*flip,furi_scale,0);
 				}
                 draw_text_transformed(xx,yy,character,-text_scale*flip,text_scale,0);
@@ -86,6 +86,8 @@ function karuta_draw(x,y,scale,index,alpha){
             }
         }
     }
+	if (abs(device_mouse_x_to_gui(0)-x)<270*scale)&&(abs(device_mouse_y_to_gui(0)-y)<430*scale)
+		last_clicked=index;
 }
 function karuta_simple_draw(x,y,scale,index,alpha){
     //Get poem data

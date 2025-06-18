@@ -677,7 +677,10 @@
   "sdfSpread":8,
   "size":45.0,
   "styleName":"medium",
-  "textureGroupId":null,
+  "textureGroupId":{
+    "name":"Default",
+    "path":"texturegroups/Default",
+  },
   "TTFName":"C:\\Users\\mitch\\GameMakerProjects\\Karuta Koen\\Karuta-Koen\\fonts\\font_hirigana\\rounded-l-mgenplus-1c-medium.ttf",
   "usesSDF":true,
 }

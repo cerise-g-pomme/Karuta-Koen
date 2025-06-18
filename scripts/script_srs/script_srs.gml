@@ -1,6 +1,7 @@
 function srs_create(){
 	srs_system=ds_grid_create(6,100);
 	srs_sort=ds_grid_create(6,100);
+	srs_alt_list=ds_list_create();
 	if !file_exists("srs_data.sav"){
 		//The SRS data doesnt exist, so we make it
 		ini_open("srs_data.sav");
@@ -39,6 +40,7 @@ function srs_create(){
 		ini_close();
 	}
 	choose_poem=srs_select();
+	srs_alt();
 	choose_queue=false;
 	audio_queue=false;
 	flip_state=true;
@@ -93,6 +95,30 @@ function srs_select(){
 	        break;
 	}
 	return 1;
+}
+function srs_alt(){
+	ds_list_clear(srs_alt_list);
+	for (var i=0;i<100;++i) {
+	    if srs_system[# 1,i]ds_list_add(srs_alt_list,i+1);
+	}
+	ds_list_delete(srs_alt_list,ds_list_find_index(srs_alt_list,choose_poem));
+	ds_list_shuffle(srs_alt_list)
+	spread_4_poem[0]=srs_alt_list[| 0];
+	spread_4_poem[1]=srs_alt_list[| 1];
+	spread_4_poem[2]=srs_alt_list[| 2];
+	spread_4_poem[3]=srs_alt_list[| 3];
+	spread_4_poem[irandom(3)]=choose_poem;
+	spread_9_poem[0]=srs_alt_list[| 0];
+	spread_9_poem[1]=srs_alt_list[| 1];
+	spread_9_poem[2]=srs_alt_list[| 2];
+	spread_9_poem[3]=srs_alt_list[| 3];
+	spread_9_poem[4]=srs_alt_list[| 4];
+	spread_9_poem[5]=srs_alt_list[| 5];
+	spread_9_poem[6]=srs_alt_list[| 6];
+	spread_9_poem[7]=srs_alt_list[| 7];
+	spread_9_poem[8]=srs_alt_list[| 8];
+	spread_9_poem[irandom(8)]=choose_poem;
+	alt_chosen=false;
 }
 /*
 function grid_print(){

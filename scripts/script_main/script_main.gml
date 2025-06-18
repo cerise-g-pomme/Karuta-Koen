@@ -12,6 +12,8 @@ function main_initialize(){
 	//SRS settings
 	srs_create();
 	mode=0;
+	last_clicked=1;
+	srs_alt();
 }
 function main_draw(){
 	//Draw the background
@@ -27,8 +29,49 @@ function main_draw(){
 			karuta_ui(center_x,center_y,scale,choose_poem);
 			var drop_smoothed=math_ease(clamp((1-drop_value)*1.2,0,1));
 			drop_value=max(0,drop_value*0.8);
-			if (drop_value>0.01)karuta_draw(center_x,center_y,scale,choose_old,1);
-			karuta_draw(center_x+100*scale*drop_value,center_y-300*scale*drop_value,scale,choose_poem,drop_smoothed);
+			challenge_poly=2
+			var drop_x=100*scale*drop_value,drop_y=300*scale*drop_value;
+			switch (settings_spread){
+			    case 4:
+					var half_scale=scale*0.475;
+					var voff=140*scale,hoff=210*scale;
+					last_clicked=0;
+					karuta_draw(center_x+voff+drop_x,center_y+hoff-drop_y,half_scale,spread_4_poem[0],drop_smoothed-(spread_4_poem[0]!=choose_poem)*alt_chosen);
+					karuta_draw(center_x+voff+drop_x,center_y-hoff-drop_y,half_scale,spread_4_poem[1],drop_smoothed-(spread_4_poem[1]!=choose_poem)*alt_chosen);
+					karuta_draw(center_x-voff+drop_x,center_y+hoff-drop_y,half_scale,spread_4_poem[2],drop_smoothed-(spread_4_poem[2]!=choose_poem)*alt_chosen);
+					karuta_draw(center_x-voff+drop_x,center_y-hoff-drop_y,half_scale,spread_4_poem[3],drop_smoothed-(spread_4_poem[3]!=choose_poem)*alt_chosen);
+					if mouse_check_button_pressed(mb_left)&&(last_clicked>0){
+						if (alt_chosen==1){
+							if (last_clicked==choose_poem){keyboard_key_press(ord("4"));keyboard_key_release(ord("4"));
+							}else{keyboard_key_press(ord("1"));keyboard_key_release(ord("1"));}
+							alt_chosen=2;
+						}else alt_chosen=1;}
+			        break;
+			    case 9:
+					var half_scale=scale*0.3;
+					var voff=140*scale*1.3,hoff=210*scale*1.3;
+					last_clicked=0;
+					karuta_draw(center_x-voff+drop_x,center_y+hoff-drop_y,half_scale,spread_9_poem[0],drop_smoothed-(spread_9_poem[0]!=choose_poem)*alt_chosen);
+					karuta_draw(center_x-voff+drop_x,center_y-drop_y,half_scale,spread_9_poem[1],drop_smoothed-(spread_9_poem[1]!=choose_poem)*alt_chosen);
+					karuta_draw(center_x-voff+drop_x,center_y-hoff-drop_y,half_scale,spread_9_poem[2],drop_smoothed-(spread_9_poem[2]!=choose_poem)*alt_chosen);
+					karuta_draw(center_x+drop_x,center_y+hoff-drop_y,half_scale,spread_9_poem[3],drop_smoothed-(spread_9_poem[3]!=choose_poem)*alt_chosen);
+					karuta_draw(center_x+drop_x,center_y-drop_y,half_scale,spread_9_poem[4],drop_smoothed-(spread_9_poem[4]!=choose_poem)*alt_chosen);
+					karuta_draw(center_x+drop_x,center_y-hoff-drop_y,half_scale,spread_9_poem[5],drop_smoothed-(spread_9_poem[5]!=choose_poem)*alt_chosen);
+					karuta_draw(center_x+voff+drop_x,center_y+hoff-drop_y,half_scale,spread_9_poem[6],drop_smoothed-(spread_9_poem[6]!=choose_poem)*alt_chosen);
+					karuta_draw(center_x+voff+drop_x,center_y-drop_y,half_scale,spread_9_poem[7],drop_smoothed-(spread_9_poem[7]!=choose_poem)*alt_chosen);
+					karuta_draw(center_x+voff+drop_x,center_y-hoff-drop_y,half_scale,spread_9_poem[8],drop_smoothed-(spread_9_poem[8]!=choose_poem)*alt_chosen);
+					if mouse_check_button_pressed(mb_left)&&(last_clicked>0){
+						if (alt_chosen==1){
+							if (last_clicked==choose_poem){keyboard_key_press(ord("4"));keyboard_key_release(ord("4"));
+							}else{keyboard_key_press(ord("1"));keyboard_key_release(ord("1"));}
+							alt_chosen=2;
+						}else alt_chosen=1;}
+			        break;
+			    default:
+					if (drop_value>0.01)karuta_draw(center_x,center_y,scale,choose_old,1);
+					karuta_draw(center_x+100*scale*drop_value,center_y-300*scale*drop_value,scale,choose_poem,drop_smoothed);
+			        break;
+			}
 	        break;
 	    case 2://Memory SRS
 			var center_x=window_get_width()*0.32;
