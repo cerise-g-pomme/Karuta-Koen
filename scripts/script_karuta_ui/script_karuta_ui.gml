@@ -114,6 +114,7 @@ function karuta_ui(x,y,scale,index){
     if (ui_button_sprite_draw(bx,by,sprite_button_1,right_button_scale)){ settings_spread=1;mouse_clear(mb_left);save_settings();} by+=step;
     if (ui_button_sprite_draw(bx,by,sprite_button_4,right_button_scale)){ settings_spread=4;mouse_clear(mb_left);save_settings();} by+=step;
     if (ui_button_sprite_draw(bx,by,sprite_button_9,right_button_scale)){ settings_spread=9;mouse_clear(mb_left);save_settings();} by+=step;
+	if (ui_button_sprite_draw(bx,by,sprite_button_eye,right_button_scale))||keyboard_check_released(vk_space){ settings_hide_all=!settings_hide_all;mouse_clear(mb_left);save_settings();} by+=step;
     //SRS buttons
 	button_color=c_white;
     draw_set_color(c_black);

@@ -18,7 +18,7 @@ function karuta_draw(x,y,scale,index,alpha){
     draw_set_font(settings_handwrite ? font_hirigana_cursive : font_hirigana);
     draw_set_alpha(alpha);
     //Draw number
-    if (settings_number && flipped){
+    if (settings_number*settings_hide_all && flipped){
         var num_scale=scale*0.6;
         var num_y=y-418*scale;
         draw_set_color(c_white);
@@ -28,7 +28,7 @@ function karuta_draw(x,y,scale,index,alpha){
     //Flip correction
     if (settings_flip) scale*=-1;
     //Draw beginner kimaraji
-    if (settings_beginner && flipped){
+    if (settings_beginner*settings_hide_all && flipped){
         draw_set_color(c_red);
         draw_set_alpha(0.2*alpha);
         var kima_x=x;
@@ -50,13 +50,13 @@ function karuta_draw(x,y,scale,index,alpha){
         }
     }
     //Draw mark
-    if (flipped && settings_mark){
+    if (flipped && settings_mark*settings_hide_all){
         var mark_x=x-155*scale*flip+-155*scale*flip*(poem_data.mark_x-3);
         var mark_y=y-310*scale+150*scale*(poem_data.mark_y-1);
         draw_sprite_ext(sprite_mark,poem_data.mark_n,mark_x,mark_y,-scale*flip,scale,0,c_white,alpha);
     }
     //Text color for torifuda
-    draw_set_color(settings_red && red_count ? c_red : c_black);
+    draw_set_color(settings_red*settings_hide_all && red_count ? c_red : c_black);
     draw_set_alpha(alpha);
     //Draw torifuda
     if (flipped){
@@ -77,7 +77,7 @@ function karuta_draw(x,y,scale,index,alpha){
 				character=string_char_at(clip,j+1);
 				xx=x0+i*x_step-3*x_step;
 				yy=y0+j*y_step;
-				if (settings_furigana){
+				if (settings_furigana*settings_hide_all){
 					draw_sprite_ext(sprite_small,0,xx,yy-furi_offset,text_scale*0.6,text_scale*0.6,0,c_white,alpha);
 					draw_text_transformed(xx,yy-furi_offset,hiragana_to_romaji(character),-furi_scale*flip,furi_scale,0);
 				}

@@ -14,6 +14,7 @@ function init_settings(){
 	settings_language=0;
 	settings_furigana=false;
 	settings_spread=1;
+	settings_hide_all=true;
 	load_settings();
 }
 function save_settings(){
@@ -32,6 +33,7 @@ function save_settings(){
 	ini_write_real("setting","language",settings_language);
 	ini_write_real("setting","furigana",settings_furigana);
 	ini_write_real("setting","spread",settings_spread);
+	ini_write_real("setting","hide",settings_hide_all);
 	ini_close();
 }
 function load_settings(){
@@ -51,6 +53,7 @@ function load_settings(){
 	settings_language=ini_read_real("setting","language",0);
 	settings_furigana=ini_read_real("setting","furigana",0);
 	settings_spread=ini_read_real("setting","spread",0);
+	settings_hide_all=ini_read_real("setting","hide",1);
 	ini_close();
 	}
 }

@@ -51,7 +51,7 @@ function srs_review(index,quality){
 	var date_today=floor(date_current_datetime());
 	var string_index=string(index);
 	srs_system[# 2,index-1]=date_today;//Last reviewed
-	srs_system[# 3,index-1]=clamp(srs_system[# 3,index-1]+0.1*(2.5-quality),0,3)//Ease
+	srs_system[# 3,index-1]=clamp(srs_system[# 3,index-1]+0.1*(2.5-quality),-10,3)//Ease
 	srs_system[# 5,index-1]=8;//Session
 	for (var i=0;i<100;++i){srs_system[# 5,i]=max(0,srs_system[# 5,i]-1);}
 	srs_score(index);

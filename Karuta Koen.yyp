@@ -252,6 +252,7 @@
     {"id":{"name":"sprite_button_autoplay","path":"sprites/sprite_button_autoplay/sprite_button_autoplay.yy",},},
     {"id":{"name":"sprite_button_back","path":"sprites/sprite_button_back/sprite_button_back.yy",},},
     {"id":{"name":"sprite_button_dakuten","path":"sprites/sprite_button_dakuten/sprite_button_dakuten.yy",},},
+    {"id":{"name":"sprite_button_eye","path":"sprites/sprite_button_eye/sprite_button_eye.yy",},},
     {"id":{"name":"sprite_button_furigana","path":"sprites/sprite_button_furigana/sprite_button_furigana.yy",},},
     {"id":{"name":"sprite_button_handwrite","path":"sprites/sprite_button_handwrite/sprite_button_handwrite.yy",},},
     {"id":{"name":"sprite_button_kimariji","path":"sprites/sprite_button_kimariji/sprite_button_kimariji.yy",},},
