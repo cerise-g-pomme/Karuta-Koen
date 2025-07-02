@@ -14,6 +14,7 @@ function main_initialize(){
 	mode=0;
 	last_clicked=1;
 	srs_alt();
+	choose_poem=1;
 }
 function main_draw(){
 	//Draw the background

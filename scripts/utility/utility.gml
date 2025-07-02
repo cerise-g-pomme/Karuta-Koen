@@ -13,6 +13,8 @@ function hiragana_to_romaji(hiragana_string) {
             case "う": romaji_string += "u"; break;
             case "え": romaji_string += "e"; break;
             case "お": romaji_string += "o"; break;
+			case "ゐ": romaji_string += "i"; break;
+			case "ゑ": romaji_string += "e"; break;
 
             // K-group
             case "か": romaji_string += "ka"; break;
@@ -20,6 +22,7 @@ function hiragana_to_romaji(hiragana_string) {
             case "く": romaji_string += "ku"; break;
             case "け": romaji_string += "ke"; break;
             case "こ": romaji_string += "ko"; break;
+			
             // G-group
             case "が": romaji_string += "ga"; break;
             case "ぎ": romaji_string += "gi"; break;
@@ -85,7 +88,7 @@ function hiragana_to_romaji(hiragana_string) {
             case "む": romaji_string += "mu"; break;
             case "め": romaji_string += "me"; break;
             case "も": romaji_string += "mo"; break;
-
+			
             // Y-group
             case "や": romaji_string += "ya"; break;
             case "ゆ": romaji_string += "yu"; break;

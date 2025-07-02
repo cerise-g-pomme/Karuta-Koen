@@ -86,6 +86,18 @@ function karuta_draw(x,y,scale,index,alpha){
             }
         }
     }
+	
+	draw_set_color(c_white);
+	draw_set_font(font_hirigana);
+	draw_set_alpha(1);
+    var poem_kimaraji=poem_data.kimariji;
+    var poem_kimaraji_romanji=hiragana_to_romaji(poem_kimaraji);
+	var string_info = poem_kimaraji + "   " + poem_kimaraji_romanji;
+	draw_text_transformed(x,y+410*scale,string_info,0.4,0.4,0);
+	draw_text_transformed(x,y-417*scale,string(index) ,0.3,0.3,0);
+	
+	
+	
 	if (abs(device_mouse_x_to_gui(0)-x)<270*scale)&&(abs(device_mouse_y_to_gui(0)-y)<430*scale)
 		last_clicked=index;
 }
